@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.hardware.Camera;
 import android.util.Log;
@@ -18,7 +19,7 @@ import android.widget.ImageView;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
-public class CameraActivity extends Activity {
+public class CameraActivity extends AppCompatActivity {
     private final static String DEBUG_TAG = "MakePhotoActivity";
     private Camera camera;
     private int cameraId = 0;
