@@ -47,7 +47,7 @@ import java.util.List;
  * UploadActivity is a ListActivity of uploading, and uploaded records as well
  * as buttons for managing the uploads and creating new ones.
  */
-public class UploadActivity extends ListActivity {
+public class UploadActivity extends AppCompatActivity {
 
     // Indicates that no upload is currently selected
     private static final int INDEX_NOT_CHECKED = -1;
@@ -189,24 +189,24 @@ public class UploadActivity extends ListActivity {
                 return false;
             }
         });
-        setListAdapter(simpleAdapter);
+        //setListAdapter(simpleAdapter);
 
         // Updates checked index when an item is clicked
-        getListView().setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
-
-                if (checkedIndex != pos) {
-                    transferRecordMaps.get(pos).put("checked", true);
-                    if (checkedIndex >= 0) {
-                        transferRecordMaps.get(checkedIndex).put("checked", false);
-                    }
-                    checkedIndex = pos;
-                    updateButtonAvailability();
-                    simpleAdapter.notifyDataSetChanged();
-                }
-            }
-        });
+       // getListView().setOnItemClickListener(new OnItemClickListener() {
+         //   @Override
+        //    public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
+//
+        //        if (checkedIndex != pos) {
+                 //   transferRecordMaps.get(pos).put("checked", true);
+         //           if (checkedIndex >= 0) {
+        //                transferRecordMaps.get(checkedIndex).put("checked", false);
+        //            }
+        //            checkedIndex = pos;
+       //             updateButtonAvailability();
+        //            simpleAdapter.notifyDataSetChanged();
+       //         }
+      //      }
+       // });
 
         btnUploadImage = (Button) findViewById(R.id.buttonUploadImage);
         btnGetResult = (Button) findViewById(R.id.buttonGetResult);
