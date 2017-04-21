@@ -6,19 +6,24 @@ import android.app.ListActivity;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.graphics.Bitmap;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import java.io.*;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
@@ -51,7 +56,7 @@ public class UploadActivity extends ListActivity {
     private static final String TAG = "UploadActivity";
 
     // Button for upload operations
-    private Button btnUploadFile;
+    private Button btnGetResult;
     private Button btnUploadImage;
     private Button btnPause;
     private Button btnResume;
@@ -59,6 +64,7 @@ public class UploadActivity extends ListActivity {
     private Button btnDelete;
     private Button btnPauseAll;
     private Button btnCancelAll;
+    private ImageView uploadimage;
 
     // The TransferUtility is the primary class for managing transfer to S3
     private TransferUtility transferUtility;
@@ -202,8 +208,8 @@ public class UploadActivity extends ListActivity {
             }
         });
 
-        btnUploadFile = (Button) findViewById(R.id.buttonUploadFile);
         btnUploadImage = (Button) findViewById(R.id.buttonUploadImage);
+        btnGetResult = (Button) findViewById(R.id.buttonGetResult);
         btnPause = (Button) findViewById(R.id.buttonPause);
         btnResume = (Button) findViewById(R.id.buttonResume);
         btnCancel = (Button) findViewById(R.id.buttonCancel);
@@ -211,24 +217,13 @@ public class UploadActivity extends ListActivity {
         btnPauseAll = (Button) findViewById(R.id.buttonPauseAll);
         btnCancelAll = (Button) findViewById(R.id.buttonCancelAll);
 
-        btnUploadFile.setOnClickListener(new OnClickListener() {
+        btnGetResult.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                if (Build.VERSION.SDK_INT >= 19) {
-                    // For Android KitKat, we use a different intent to ensure
-                    // we can
-                    // get the file path from the returned intent URI
-                    intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-                    intent.addCategory(Intent.CATEGORY_OPENABLE);
-                    intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                    intent.setType("*/*");
-                } else {
-                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                    intent.setType("file/*");
-                }
+                //Intent intent = new Intent(DownloadActivity.this, DownloadSelectionActivity.class);
+                //startActivityForResult(intent, DOWNLOAD_SELECTION_REQUEST_CODE);
+                beginDownload();
 
-                startActivityForResult(intent, 0);
             }
         });
 
@@ -407,16 +402,18 @@ public class UploadActivity extends ListActivity {
         File file = new File(filePath);
         TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file.getName(),
                 file);
-        /*
-         * Note that usually we set the transfer listener after initializing the
-         * transfer. However it isn't required in this sample app. The flow is
-         * click upload button -> start an activity for image selection
-         * startActivityForResult -> onActivityResult -> beginUpload -> onResume
-         * -> set listeners to in progress transfers.
-         */
-        // observer.setTransferListener(new UploadListener());
+        Bitmap myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+        ImageView uploadimage = (ImageView)findViewById(R.id.uploadImage);
+        uploadimage.setImageBitmap(myBitmap);
     }
 
+    private void beginDownload() {
+        // Location to download files from S3 to. You can choose any accessible
+        // file.
+        File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + "result.txt");
+        TransferObserver observer = transferUtility.download(Constants.BUCKET_NAME, "result.txt", file);
+        Toast.makeText(UploadActivity.this,"결과 다운로드 완료!",Toast.LENGTH_SHORT).show();
+    }
     /*
      * Gets the file path of the given Uri.
      */
