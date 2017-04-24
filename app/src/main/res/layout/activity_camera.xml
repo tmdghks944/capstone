@@ -13,17 +13,30 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="주의사항 : 얼굴이 인식될 수 있도록 가깝게 찍고 최대한 밝은 곳에서 찍으세요"
+        android:text="주의사항 : 얼굴이 인식될 수 있도록 가깝게 찍고 최대한 밝은 곳에서 찍으세요. 업로드 된 사진은 다른 용도로 쓰이지 않습니다."
         android:textAlignment="center"
-        android:textSize="30dp"/>
+        android:textSize="25dp"/>
 
-    <Button
-        android:id="@+id/captureFront"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginTop="430dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="PhotoClick"
-        android:text="Make Photo"
-        android:layout_marginBottom="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/captureFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="captureImg"
+            android:text="사진 촬영" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="uploadImg"
+            android:layout_weight="1"
+            android:text="사진 업로드" />
+    </LinearLayout>
+
 </RelativeLayout>

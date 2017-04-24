@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent photoIntent = new Intent(this,CameraActivity.class);
                 startActivity(photoIntent);
                 break;
-            case R.id.main4:
-                Intent uploadIntent = new Intent(this,UploadActivity.class);
-                startActivity(uploadIntent);
-                break;
         }
     }
     @Override
