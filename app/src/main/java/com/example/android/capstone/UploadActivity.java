@@ -191,22 +191,22 @@ public class UploadActivity extends AppCompatActivity {
         });
         //setListAdapter(simpleAdapter);
 
-        // Updates checked index when an item is clicked
-       // getListView().setOnItemClickListener(new OnItemClickListener() {
-         //   @Override
+        //Updates checked index when an item is clicked
+        //getListView().setOnItemClickListener(new OnItemClickListener() {
+        //   @Override
         //    public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
-//
+        //
         //        if (checkedIndex != pos) {
-                 //   transferRecordMaps.get(pos).put("checked", true);
-         //           if (checkedIndex >= 0) {
+        //            transferRecordMaps.get(pos).put("checked", true);
+        //           if (checkedIndex >= 0) {
         //                transferRecordMaps.get(checkedIndex).put("checked", false);
         //            }
         //            checkedIndex = pos;
-       //             updateButtonAvailability();
+        //            updateButtonAvailability();
         //            simpleAdapter.notifyDataSetChanged();
-       //         }
-      //      }
-       // });
+        //        }
+        //     }
+        //});
 
         btnUploadImage = (Button) findViewById(R.id.buttonUploadImage);
         btnGetResult = (Button) findViewById(R.id.buttonGetResult);
@@ -377,7 +377,6 @@ public class UploadActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
-
             try {
                 String path = getPath(uri);
                 beginUpload(path);

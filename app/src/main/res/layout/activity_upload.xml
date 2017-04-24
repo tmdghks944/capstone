@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/pauseCancelAllLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
@@ -31,8 +31,8 @@
 
     <LinearLayout
         android:id="@+id/operationLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_above="@id/pauseCancelAllLayout"
         android:orientation="horizontal" >
 
