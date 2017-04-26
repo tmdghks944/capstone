@@ -29,14 +29,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="captureImg"
-            android:text="사진 촬영" />
+            android:text="사진 촬영"
+            android:theme="@style/ThemeOverlay.MyDarkButton"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="uploadImg"
             android:layout_weight="1"
-            android:text="사진 업로드" />
+            android:text="사진 업로드"
+            android:theme="@style/ThemeOverlay.MyDarkButton"/>
     </LinearLayout>
 
 </RelativeLayout>

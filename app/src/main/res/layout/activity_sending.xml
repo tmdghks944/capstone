@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:onClick="trasferImg"
-        android:text="전송" />
+        android:text="전송"
+        android:theme="@style/ThemeOverlay.MyDarkButton"/>
 
 </FrameLayout>

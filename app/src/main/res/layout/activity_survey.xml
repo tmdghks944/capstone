@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.capstone.SurveyActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:id="@+id/hello_text"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="2개의 질문에 해당사항이 있으면 체크하고 사진 촬영 메뉴를 통
+            해 자신의 피부 상태를 확인하세요.\n"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/gotoMain"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:text="시작하기"
+            android:onClick="clickBtn"
+            android:theme="@style/ThemeOverlay.MyDarkButton"
+            android:layout_gravity="bottom|center_horizontal"/>
+    </LinearLayout>
+</LinearLayout>
