@@ -11,6 +11,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
+        android:id="@+id/surveyLinear"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -21,17 +22,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:text="2개의 질문에 해당사항이 있으면 체크하고 사진 촬영 메뉴를 통
+            android:text="질문에 해당사항이 있으면 체크하고 사진 촬영 메뉴를 통
             해 자신의 피부 상태를 확인하세요.\n"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:layout_weight="0.8"
+                    android:text="건성이면 체크 지성이면 체크x"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:layout_weight="0.8"
+                    android:text="민감이면 체크 아니면 체크x"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2" />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:id="@+id/gotoMain"
             android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="100dp"
             android:text="시작하기"
             android:onClick="clickBtn"
             android:theme="@style/ThemeOverlay.MyDarkButton"
             android:layout_gravity="bottom|center_horizontal"/>
+
     </LinearLayout>
 </LinearLayout>

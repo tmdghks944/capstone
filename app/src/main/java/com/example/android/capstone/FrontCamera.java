@@ -272,7 +272,7 @@ public class FrontCamera extends AppCompatActivity {
                 File sdCard = Environment.getExternalStorageDirectory();
                 File dir = new File (sdCard.getAbsolutePath() + "/capstone");
                 dir.mkdirs();
-
+                //filename을 일정한 이름으로 넣으면 좋을듯?
                 String fileName = String.format("%d.jpg", System.currentTimeMillis());
                 File outFile = new File(dir, fileName);
                 outStream = new FileOutputStream(outFile);

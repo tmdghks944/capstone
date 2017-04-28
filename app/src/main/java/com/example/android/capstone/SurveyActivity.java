@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class SurveyActivity extends AppCompatActivity{
     TextView textview;
     Button gotoMainbutton;
-    private LinearLayout mainLinear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +19,6 @@ public class SurveyActivity extends AppCompatActivity{
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
         textview = (TextView)findViewById(R.id.hello_text);
         textview.setText("안녕하세요 " + globalvariable.getusername()+"님");
-        mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
     }
     public void clickBtn(View view) {
         switch (view.getId()) {

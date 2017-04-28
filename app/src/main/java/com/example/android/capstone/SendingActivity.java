@@ -1,8 +1,10 @@
 package com.example.android.capstone;
 
+import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +36,8 @@ public class SendingActivity extends AppCompatActivity {
     private int checkedIndex;
     private SimpleAdapter simpleAdapter;
     private static final String TAG = "SendingActivity";
-
+    Handler mHandler;
+    ProgressDialog mProgressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,15 @@ public class SendingActivity extends AppCompatActivity {
     }
     public void trasferImg(View view){
         beginUpload(image_path);
+        showMessage();
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable(){
+            @Override
+            public void run(){
+                Intent intent = new Intent(SendingActivity.this,ResultActivity.class);
+                startActivity(intent);
+            }
+        },20000);
     }
 
     private void beginUpload(String filePath) {
@@ -58,10 +70,57 @@ public class SendingActivity extends AppCompatActivity {
         }
         File file = new File(filePath);
         TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file.getName(), file);
-        Toast.makeText(SendingActivity.this,"전송 되었습니다.",Toast.LENGTH_SHORT).show();
+
         //올린 이미지 보여주기 조금있다가 얼굴인식된 사진으로 보여줘야함.
       //Bitmap myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
       //ImageView uploadimage = (ImageView)findViewById(R.id.uploadImage);
       //uploadimage.setImageBitmap(myBitmap);
     }
+
+    public void showMessage(){
+        mHandler = new Handler();
+        mProgressDialog = ProgressDialog.show(SendingActivity.this, "",
+                "사진을 전송합니다.", true);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                        mProgressDialog.dismiss();
+                        mProgressDialog = ProgressDialog.show(SendingActivity.this, "",
+                                "얼굴을 인식합니다.", true);
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                                        mProgressDialog.dismiss();
+                                        mProgressDialog = ProgressDialog.show(SendingActivity.this, "",
+                                                "프로그램을 통해 결과를 출력합니다.", true);
+                                        mHandler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                                                        mProgressDialog.dismiss();
+                                                    }
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }, 7000);
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, 10000);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 7000);
+    }
+
 }
