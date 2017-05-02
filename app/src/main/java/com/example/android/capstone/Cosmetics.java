@@ -9,15 +9,13 @@ public class Cosmetics {
     private String CosmeticId;
     private String CosmeticName;
     private String CosmeticAddress;
-    private List<Ingredients> CosmeticIngredients;
     public Cosmetics(){
         //this constructor is required
     }
-    public Cosmetics(String CosmeticId, String CosmeticName, String CosmeticAddress, List<Ingredients> CosmeticIngredients) {
+    public Cosmetics(String CosmeticId, String CosmeticName, String CosmeticAddress) {
         this.CosmeticId = CosmeticId;
         this.CosmeticName = CosmeticName;
         this.CosmeticAddress = CosmeticAddress;
-        this.CosmeticIngredients = CosmeticIngredients;
     }
 
     public String getCosmeticId() {
@@ -30,8 +28,5 @@ public class Cosmetics {
 
     public String getCosmeticAddress() {
         return CosmeticAddress;
-    }
-    public List<Ingredients> getCosmeticIngredients() {
-        return CosmeticIngredients;
     }
 }

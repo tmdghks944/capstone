@@ -3,36 +3,37 @@ package com.example.android.capstone;
 public class Ingredients {
     private String IngredientId;
     private String IngredientName;
-    private Integer IngredientDanger;
-    private Boolean Ingredienttype1;
-    private Boolean Ingredienttype2;
-    private Boolean Ingredienttype3;
-    private Boolean Ingredienttype4;
-    private Boolean Ingredienttype5;
-    private Boolean Ingredienttype6;
-    private Boolean Ingredienttype7;
-    private Boolean Ingredienttype8;
-    private Boolean Ingredienttype9;
-    private Boolean Ingredienttype10;
-    private Boolean Ingredienttype11;
-    private Boolean Ingredienttype12;
-    private Boolean Ingredienttype13;
-    private Boolean Ingredienttype14;
-    private Boolean Ingredienttype15;
-    private Boolean Ingredienttype16;
+    private int IngredientDanger;
+    private int Ingredienttype1;
+    private int Ingredienttype2;
+    private int Ingredienttype3;
+    private int Ingredienttype4;
+    private int Ingredienttype5;
+    private int Ingredienttype6;
+    private int Ingredienttype7;
+    private int Ingredienttype8;
+    private int Ingredienttype9;
+    private int Ingredienttype10;
+    private int Ingredienttype11;
+    private int Ingredienttype12;
+    private int Ingredienttype13;
+    private int Ingredienttype14;
+    private int Ingredienttype15;
+    private int Ingredienttype16;
+    private int Ingredienttype17;
     public Ingredients(){
         //this constructor is required
     }
     public Ingredients(String IngredientId, String IngredientName, Integer IngredientDanger,
-                       Boolean Ingredienttype1,
-                       Boolean Ingredienttype2, Boolean Ingredienttype3,
-                       Boolean Ingredienttype4, Boolean Ingredienttype5,
-                       Boolean Ingredienttype6, Boolean Ingredienttype7,
-                       Boolean Ingredienttype8, Boolean Ingredienttype9,
-                       Boolean Ingredienttype10, Boolean Ingredienttype11,
-                       Boolean Ingredienttype12, Boolean Ingredienttype13,
-                       Boolean Ingredienttype14, Boolean Ingredienttype15,
-                       Boolean Ingredienttype16 ) {
+                       int Ingredienttype1,
+                       int Ingredienttype2, int Ingredienttype3,
+                       int Ingredienttype4, int Ingredienttype5,
+                       int Ingredienttype6, int Ingredienttype7,
+                       int Ingredienttype8, int Ingredienttype9,
+                       int Ingredienttype10, int Ingredienttype11,
+                       int Ingredienttype12, int Ingredienttype13,
+                       int Ingredienttype14, int Ingredienttype15,
+                       int Ingredienttype16, int Ingredienttype17 ) {
         this.IngredientId = IngredientId;
         this.IngredientName = IngredientName;
         this.IngredientDanger = IngredientDanger;
@@ -52,64 +53,68 @@ public class Ingredients {
         this.Ingredienttype14=Ingredienttype14;
         this.Ingredienttype15=Ingredienttype15;
         this.Ingredienttype16=Ingredienttype16;
+        this.Ingredienttype17=Ingredienttype17;
     }
 
     public String getIngredientId() {
         return IngredientId;
     }
-
     public String getIngredientName() {
         return IngredientName;
     }
+
     public Integer getIngredientDanger(){
         return IngredientDanger;
     }
-    public Boolean getIngredienttype1(){
+    public int getIngredienttype1(){
         return Ingredienttype1;
     }
-    public Boolean getIngredienttype2(){
+    public int getIngredienttype2(){
         return Ingredienttype2;
     }
-    public Boolean getIngredienttype3(){
+    public int getIngredienttype3(){
         return Ingredienttype3;
     }
-    public Boolean getIngredienttype4(){
+    public int getIngredienttype4(){
         return Ingredienttype4;
     }
-    public Boolean getIngredienttype5(){
+    public int getIngredienttype5(){
         return Ingredienttype5;
     }
-    public Boolean getIngredienttype6(){
+    public int getIngredienttype6(){
         return Ingredienttype6;
     }
-    public Boolean getIngredienttype7(){
+    public int getIngredienttype7(){
         return Ingredienttype7;
     }
-    public Boolean getIngredienttype8(){
+    public int getIngredienttype8(){
         return Ingredienttype8;
     }
-    public Boolean getIngredienttype9(){
+    public int getIngredienttype9(){
         return Ingredienttype9;
     }
-    public Boolean getIngredienttype10(){
+    public int getIngredienttype10(){
         return Ingredienttype10;
     }
-    public Boolean getIngredienttype11(){
+    public int getIngredienttype11(){
         return Ingredienttype11;
     }
-    public Boolean getIngredienttype12(){
+    public int getIngredienttype12(){
         return Ingredienttype12;
     }
-    public Boolean getIngredienttype13(){
+    public int getIngredienttype13(){
         return Ingredienttype13;
     }
-    public Boolean getIngredienttype14(){
+    public int getIngredienttype14(){
         return Ingredienttype14;
     }
-    public Boolean getIngredienttype15(){
+    public int getIngredienttype15(){
         return Ingredienttype15;
     }
-    public Boolean getIngredienttype16(){
+    public int getIngredienttype16(){
         return Ingredienttype16;
+    }
+    public int getIngredienttype17(){
+        return Ingredienttype17;
     }
 }

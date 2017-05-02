@@ -70,16 +70,14 @@ public class FirebaseActivity extends AppCompatActivity {
         String name = editTextName.getText().toString().trim();
         String address = editTextAddress.getText().toString().trim();
 
-
         //checking if the value is provided
         if (!TextUtils.isEmpty(name)) {
 
             //getting a unique id using push().getKey() method
             //it will create a unique id and we will use it as the Primary Key for our Artist
             String id = databaseCosmetics.push().getKey();
-            List<Ingredients> ingredientsList = null;
             //creating an Artist Object
-            Cosmetics cosmetic = new Cosmetics(id, name, address,ingredientsList);
+            Cosmetics cosmetic = new Cosmetics(id, name, address);
 
             //Saving the Artist
             databaseCosmetics.child(id).setValue(cosmetic);
