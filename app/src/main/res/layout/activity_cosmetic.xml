@@ -38,10 +38,10 @@
             android:id="@+id/seekBarDanger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="5"></SeekBar>
+            android:max="10"></SeekBar>
 
         <TextView
-            android:text="1"
+            android:text="0"
             android:id="@+id/textViewDanger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

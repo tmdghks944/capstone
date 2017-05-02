@@ -16,7 +16,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -140,12 +139,12 @@ public class FirebaseActivity extends AppCompatActivity {
         });
     }
 
-    private boolean updateCosmetic(String id, String name, String genre) {
+    private boolean updateCosmetic(String id, String name, String address) {
         //getting the specified cosmetic reference
         DatabaseReference dR = FirebaseDatabase.getInstance().getReference("cosmetics").child(id);
 
         //updating cosmetic
-        Cosmetic cosmetic = new Cosmetic(id, name, genre);
+        Cosmetic cosmetic = new Cosmetic(id, name, address);
         dR.setValue(cosmetic);
         Toast.makeText(getApplicationContext(), "Cosmetic Updated", Toast.LENGTH_LONG).show();
         return true;
