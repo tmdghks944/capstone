@@ -2,17 +2,17 @@ package com.example.android.capstone;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
-import java.util.List;
-
 @IgnoreExtraProperties
-public class Cosmetics {
+public class Cosmetic {
+
     private String CosmeticId;
     private String CosmeticName;
     private String CosmeticAddress;
-    public Cosmetics(){
+
+    public Cosmetic(){
         //this constructor is required
     }
-    public Cosmetics(String CosmeticId, String CosmeticName, String CosmeticAddress) {
+    public Cosmetic(String CosmeticId, String CosmeticName, String CosmeticAddress) {
         this.CosmeticId = CosmeticId;
         this.CosmeticName = CosmeticName;
         this.CosmeticAddress = CosmeticAddress;
@@ -22,9 +22,7 @@ public class Cosmetics {
         return CosmeticId;
     }
 
-    public String getCosmeticName() {
-        return CosmeticName;
-    }
+    public String getCosmeticName() { return CosmeticName; }
 
     public String getCosmeticAddress() {
         return CosmeticAddress;

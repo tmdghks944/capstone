@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_artist"
+    android:id="@+id/activity_cosmetic"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.capstone.CosmeticsActivity">
+    tools:context="com.example.android.capstone.CosmeticActivity">
 
     <TextView
         android:id="@+id/textViewCosmetic"
@@ -20,11 +20,11 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:layout_below="@id/textViewArtist"
+        android:layout_below="@id/textViewCosmetic"
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter track name" />
+        android:hint="Enter ingredient name" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -35,20 +35,20 @@
 
         <SeekBar
             android:layout_weight="1"
-            android:id="@+id/seekBarRating"
+            android:id="@+id/seekBarDanger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="5"></SeekBar>
 
         <TextView
             android:text="1"
-            android:id="@+id/textViewRating"
+            android:id="@+id/textViewDanger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
     <Button
-        android:id="@+id/buttonAddTrack"
+        android:id="@+id/buttonAddIngredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linearLayout"
@@ -58,14 +58,14 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonAddTrack"
+        android:layout_below="@id/buttonAddIngredient"
         android:padding="@dimen/activity_horizontal_margin"
-        android:text="Tracks"
+        android:text="Ingredients"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <ListView
-        android:id="@+id/listViewTracks"
+        android:id="@+id/listViewIngredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"></ListView>

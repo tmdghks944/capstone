@@ -75,8 +75,8 @@
         <activity
             android:name=".FirebaseActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".CosmeticsList" />
-        <activity android:name=".CosmeticsActivity"></activity>
+
+        <activity android:name=".CosmeticActivity"></activity>
     </application>
 
 </manifest>

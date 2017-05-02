@@ -1,50 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_firebase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.capstone.FirebaseActivity">
 
-    <TextView
-        android:text="Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <EditText
+        android:hint="화장품 이름"
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:text="Address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <EditText
+        android:hint="화장품 주소"
         android:id="@+id/editTextAddress"
         android:layout_width="match_parent"
+        android:layout_below="@id/editTextName"
         android:layout_height="wrap_content" />
-
     <Button
-        android:id="@+id/buttonSave"
-        android:text="Create"
+        android:id="@+id/buttonAddCosmetic"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextAddress"
+        android:text="Add" />
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddCosmetic"
+        android:padding="@dimen/activity_horizontal_margin"
         android:text="Cosmetics"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <TextView
-        android:id="@+id/textViewCosmetics"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:text="Tap on an Cosmetic to add and view ingredients"
+        android:textAlignment="center" />
 
-</LinearLayout>
+    <ListView
+        android:id="@+id/listViewCosmetics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"></ListView>
+
+</RelativeLayout>
