@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="odq1">
+        <item>선택</item>
+        <item>1. 각질이 일어나거나 주름 사이에 끼어 있다</item>
+        <item>2. 화장이 들뜸이 없다</item>
+        <item>3. 윤기가 흐른다</item>
+        <item>4. 줄이 생기고 윤기가 흐른다</item>
+        <item>5. 나는 기초화장을 하지 않는다</item>
+    </string-array>
+    <string-array name="odq2">
+        <item>선택</item>
+        <item>1. 건조하거나 갈라지는 느낌이 든다</item>
+        <item>2. 약간 건조한 느낌이 들지만 갈라지는 느낌은 없다</item>
+        <item>3. 정상적인 느낌이다</item>
+        <item>4. 기름기가 있는 느낌이다</item>
+        <item>5. 나는 비누나 거품이 생기는 클렌저를 사용하지 않는다</item>
+    </string-array>
+    <string-array name="odq3">
+        <item>선택</item>
+        <item>1. 항상 그렇다</item>
+        <item>2. 때때로 그렇다</item>
+        <item>3. 거의 그렇지 않다</item>
+        <item>4. 전혀 그렇지 않다</item>
+    </string-array>
+    <string-array name="odq4">
+        <item>선택</item>
+        <item>1. 전혀 없다</item>
+        <item>2. 거의 없다</item>
+        <item>3. 조금 있다</item>
+        <item>4. 많이 있다</item>
+    </string-array>
+    <string-array name="odq5">
+        <item>선택</item>
+        <item>1. 전혀 없다</item>
+        <item>2. 때때로 있다</item>
+        <item>3. 자주 있다</item>
+        <item>4. 항상 있다</item>
+    </string-array>
+    <string-array name="odq6">
+        <item>선택</item>
+        <item>1. 매우 거칠거나, 각질이 들뜨거나 창백하다</item>
+        <item>2. 매끄럽다</item>
+        <item>3. 약간 윤기가 흐른다</item>
+        <item>4. 윤기가 흐르고 번들거린다. 혹은 나는 보습제를 사용하지 않는다</item>
+    </string-array>
+
+    <string-array name="pnq1">
+        <item>선택</item>
+        <item>1. 전혀 생기지 않는다</item>
+        <item>2. 때때로 생긴다</item>
+        <item>3. 자주 생긴다</item>
+        <item>4. 여드름이나 피부 속으로 파고 들어간 모발이 전혀 없다</item>
+    </string-array>
+    <string-array name="pnq2">
+        <item>선택</item>
+        <item>1. 짙은 점이 전혀 없다</item>
+        <item>2. 잘 모르겠다</item>
+        <item>3. 약간 나빠진다</item>
+        <item>4. 많이 나빠진다</item>
+        <item>5. 매일 자외선차단제를 얼굴에 바르고 햇빛을 피한다</item>
+    </string-array>
+    <string-array name="pnq3">
+        <item>선택</item>
+        <item>1. 없다</item>
+        <item>2. 한 번 있었지만, 소실되었다</item>
+        <item>3. 있다</item>
+        <item>4. 있으며 심각한 경우이다</item>
+        <item>5. 잘 모르겠다.</item>
+    </string-array>
+    <string-array name="pnq4">
+        <item>선택</item>
+        <item>1. 없다</item>
+        <item>2. 약간 있다(1~5개)</item>
+        <item>3. 많이 있다(6~15개)</item>
+        <item>4. 대단히 많다(16개 이상)</item>
+    </string-array>
+    <string-array name="pnq5">
+        <item>선택</item>
+        <item>1. 햇빛에 타서 물집이 생겼으나 피부색은 변하지 않는다</item>
+        <item>2. 피부색이 약간 짙어졌다</item>
+        <item>3. 피부색이 많이 짙어졌다</item>
+        <item>4. 원래 피부색이 짙어서 더 짙어졌는지 구분이 어렵다</item>
+        <item>5. 잘 모르겠다.</item>
+    </string-array>
+    <string-array name="pnq6">
+        <item>선택</item>
+        <item>1. 전혀 생기지 않는다</item>
+        <item>2. 매년 약간씩 작은 주근깨가 생긴다</item>
+        <item>3. 자주 주근깨가 생긴다</item>
+        <item>4. 피부가 이미 짙어서 주근깨가 있는 지 구분이 어렵다</item>
+        <item>5. 햇볕에 전혀 나가지 않는다</item>
+    </string-array>
+    <string-array name="pnq7">
+        <item>선택</item>
+        <item>1. 없다</item>
+        <item>2. 얼굴에 약간 있었다</item>
+        <item>3. 얼굴에 많이 있었다</item>
+        <item>4. 얼굴, 가슴, 목, 양쪽 어깨에 많이 있었다</item>
+        <item>5. 잘 모르겠다</item>
+    </string-array>
+
+
+</resources>

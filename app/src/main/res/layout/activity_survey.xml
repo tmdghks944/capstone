@@ -5,70 +5,392 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.capstone.SurveyActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="25dp"
-        android:id="@+id/surveyLinear"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:id="@+id/hello_text"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="질문에 해당사항이 있으면 체크하고 사진 촬영 메뉴를 통
-            해 자신의 피부 상태를 확인하세요.\n"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/surveyLinear"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/hello_text"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:text="설문조사에 응답해주세요\n"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
+                android:orientation="vertical">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:layout_weight="0.8"
-                    android:text="건성이면 체크 지성이면 체크x"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
+                    android:id="@+id/survey1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="20dp"
+                        android:text="1. 파우더를 사용하지 않고 기초 화장만 한 상태에서 2~3시간 후에 당신의 화장 상태는 어떻습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq1"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.2" />
+                    android:visibility="gone"
+                    android:id="@+id/survey2"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="2. 비누 방울, 거품이 심하게 발생하는 비누를 사용하면 당신의 얼굴 피부는 어떻습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq2"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey3"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="3. 보습제를 사용하지 않으면 얼굴 피부는 당기는 느낌입니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey4"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="4. 얼굴에 모공이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="5. 얼굴의 T존에 유분기가 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey6"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="6. 보습제를 바르고 2~3시간 이후에 양 볼은?" />
+                    ﻿<Spinner
+                        android:id="@+id/odq6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey7"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="7. 여드름 혹은 피부 속으로 파고 들어간 모발에 의해 짙은 갈색이나 검은 점이 생깁니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey8"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="8. 얼굴의 짙은 점은 햇빛에 의해 약화됩니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey9"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="9. 과거에 얼굴 기미로 진단받은 적이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey10"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="10. 얼굴, 가슴, 등, 혹은 양팔에 작은 갈색 점이 있거나, 있었던 적이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey11"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="11. 며칠동안 계속해서 햇빛에 노출되면 어떤 일이 일어납니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey12"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="12. 햇볕에 나가면 주근깨가 생기나요?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey13"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="13. 부모님 중의 어느 한분이라도 주근깨가 있나요?" />
+                    ﻿<Spinner
+                        android:id="@+id/pnq7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="다음"
+                android:visibility="visible"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton" />
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:text="다음"
+                android:onClick="clickBtn"
+                android:visibility="gone"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q3"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="273dp"
+                android:text="다음"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q4"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:visibility="gone"
+                android:layout_marginTop="296dp"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q5"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="296dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q6"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q7"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="250dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q8"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q9"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q10"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q11"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q12"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="296dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:id="@+id/gotoMain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:layout_weight="0.8"
-                    android:text="민감이면 체크 아니면 체크x"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.2" />
-            </LinearLayout>
+                android:layout_marginTop="273dp"
+                android:text="시작하기"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
         </LinearLayout>
-
-        <Button
-            android:layout_width="match_parent"
-            android:id="@+id/gotoMain"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="시작하기"
-            android:onClick="clickBtn"
-            android:theme="@style/ThemeOverlay.MyDarkButton"
-            android:layout_gravity="bottom|center_horizontal"/>
-
-    </LinearLayout>
 </LinearLayout>

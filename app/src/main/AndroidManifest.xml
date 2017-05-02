@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".SurveyActivity"
-            android:parentActivityName=".LoginActivity"></activity>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".MainActivity"
             android:parentActivityName=".SurveyActivity">
@@ -69,8 +69,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ResultActivity"
-            android:parentActivityName=".SendingActivity">
-        </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:parentActivityName=".SendingActivity" />
+        <activity
+            android:name=".FirebaseActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
+
 </manifest>

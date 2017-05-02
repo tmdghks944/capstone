@@ -120,7 +120,6 @@
                     android:layout_height="160dp"
                     android:layout_weight="1"
                     android:onClick="clickMain"
-                    android:visibility="invisible"
                     android:orientation="vertical">
 
                     <ImageView
