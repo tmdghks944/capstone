@@ -14,7 +14,7 @@
         <item>2. 약간 건조한 느낌이 들지만 갈라지는 느낌은 없다</item>
         <item>3. 정상적인 느낌이다</item>
         <item>4. 기름기가 있는 느낌이다</item>
-        <item>5. 나는 비누나 거품이 생기는 클렌저를 사용하지 않는다</item>
+        <item>5. 비누나 클렌저를 사용하지 않는다</item>
     </string-array>
     <string-array name="odq3">
         <item>선택</item>
@@ -42,7 +42,7 @@
         <item>1. 매우 거칠거나, 각질이 들뜨거나 창백하다</item>
         <item>2. 매끄럽다</item>
         <item>3. 약간 윤기가 흐른다</item>
-        <item>4. 윤기가 흐르고 번들거린다. 혹은 나는 보습제를 사용하지 않는다</item>
+        <item>4. 윤기가 흐른다. 혹은 보습제를 사용하지 않는다</item>
     </string-array>
 
     <string-array name="pnq1">
@@ -50,7 +50,7 @@
         <item>1. 전혀 생기지 않는다</item>
         <item>2. 때때로 생긴다</item>
         <item>3. 자주 생긴다</item>
-        <item>4. 여드름이나 피부 속으로 파고 들어간 모발이 전혀 없다</item>
+        <item>4. 피부 속으로 파고 들어간 모발이 전혀 없다</item>
     </string-array>
     <string-array name="pnq2">
         <item>선택</item>
@@ -58,7 +58,7 @@
         <item>2. 잘 모르겠다</item>
         <item>3. 약간 나빠진다</item>
         <item>4. 많이 나빠진다</item>
-        <item>5. 매일 자외선차단제를 얼굴에 바르고 햇빛을 피한다</item>
+        <item>5. 매일 자외선차단제를 바르고 햇빛을 피한다</item>
     </string-array>
     <string-array name="pnq3">
         <item>선택</item>
@@ -77,7 +77,7 @@
     </string-array>
     <string-array name="pnq5">
         <item>선택</item>
-        <item>1. 햇빛에 타서 물집이 생겼으나 피부색은 변하지 않는다</item>
+        <item>1. 타서 물집이 생겼으나 피부색은 변하지 않는다</item>
         <item>2. 피부색이 약간 짙어졌다</item>
         <item>3. 피부색이 많이 짙어졌다</item>
         <item>4. 원래 피부색이 짙어서 더 짙어졌는지 구분이 어렵다</item>
@@ -88,7 +88,7 @@
         <item>1. 전혀 생기지 않는다</item>
         <item>2. 매년 약간씩 작은 주근깨가 생긴다</item>
         <item>3. 자주 주근깨가 생긴다</item>
-        <item>4. 피부가 이미 짙어서 주근깨가 있는 지 구분이 어렵다</item>
+        <item>4. 피부가 짙어서 주근깨가 있는 지 구분이 어렵다</item>
         <item>5. 햇볕에 전혀 나가지 않는다</item>
     </string-array>
     <string-array name="pnq7">
@@ -99,6 +99,4 @@
         <item>4. 얼굴, 가슴, 목, 양쪽 어깨에 많이 있었다</item>
         <item>5. 잘 모르겠다</item>
     </string-array>
-
-
 </resources>

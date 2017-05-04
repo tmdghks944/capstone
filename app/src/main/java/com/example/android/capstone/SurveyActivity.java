@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -45,85 +46,101 @@ public class SurveyActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
-        GlobalVariable globalvariable = (GlobalVariable)getApplication();
         textview = (TextView)findViewById(R.id.hello_text);
+        GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        globalvariable.setod_value(0);
+        globalvariable.setpn_value(0);
         textview.setText("안녕하세요 " + globalvariable.getusername()+"님");
         setUp();
     }
 
     public void clickBtn(View view) {
+        GlobalVariable globalvariable = (GlobalVariable)getApplication();
         switch (view.getId()) {
             case R.id.gotoMain:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.q1:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question1.setVisibility(View.GONE);
                 btn1.setVisibility(View.GONE);
                 question2.setVisibility(View.VISIBLE);
                 btn2.setVisibility(View.VISIBLE);
                 break;
             case R.id.q2:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question2.setVisibility(View.GONE);
                 btn2.setVisibility(View.GONE);
                 question3.setVisibility(View.VISIBLE);
                 btn3.setVisibility(View.VISIBLE);
                 break;
             case R.id.q3:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question3.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
                 question4.setVisibility(View.VISIBLE);
                 btn4.setVisibility(View.VISIBLE);
                 break;
             case R.id.q4:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question4.setVisibility(View.GONE);
                 btn4.setVisibility(View.GONE);
                 question5.setVisibility(View.VISIBLE);
                 btn5.setVisibility(View.VISIBLE);
                 break;
             case R.id.q5:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question5.setVisibility(View.GONE);
                 btn5.setVisibility(View.GONE);
                 question6.setVisibility(View.VISIBLE);
                 btn6.setVisibility(View.VISIBLE);
                 break;
             case R.id.q6:
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question6.setVisibility(View.GONE);
                 btn6.setVisibility(View.GONE);
                 question7.setVisibility(View.VISIBLE);
                 btn7.setVisibility(View.VISIBLE);
                 break;
             case R.id.q7:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question7.setVisibility(View.GONE);
                 btn7.setVisibility(View.GONE);
                 question8.setVisibility(View.VISIBLE);
                 btn8.setVisibility(View.VISIBLE);
                 break;
             case R.id.q8:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question8.setVisibility(View.GONE);
                 btn8.setVisibility(View.GONE);
                 question9.setVisibility(View.VISIBLE);
                 btn9.setVisibility(View.VISIBLE);
                 break;
             case R.id.q9:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question9.setVisibility(View.GONE);
                 btn9.setVisibility(View.GONE);
                 question10.setVisibility(View.VISIBLE);
                 btn10.setVisibility(View.VISIBLE);
                 break;
             case R.id.q10:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question10.setVisibility(View.GONE);
                 btn10.setVisibility(View.GONE);
                 question11.setVisibility(View.VISIBLE);
                 btn11.setVisibility(View.VISIBLE);
                 break;
             case R.id.q11:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question11.setVisibility(View.GONE);
                 btn11.setVisibility(View.GONE);
                 question12.setVisibility(View.VISIBLE);
                 btn12.setVisibility(View.VISIBLE);
                 break;
             case R.id.q12:
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question12.setVisibility(View.GONE);
                 btn12.setVisibility(View.GONE);
                 question13.setVisibility(View.VISIBLE);
@@ -133,6 +150,7 @@ public class SurveyActivity extends AppCompatActivity{
     }
 
     public void setUp(){
+        final GlobalVariable globalvariable = (GlobalVariable)getApplication();
 
         question1 = (LinearLayout)findViewById(R.id.survey1);
         question2 = (LinearLayout)findViewById(R.id.survey2);
@@ -161,11 +179,23 @@ public class SurveyActivity extends AppCompatActivity{
         btn11 = (Button)findViewById(R.id.q11);
         btn12 = (Button)findViewById(R.id.q12);
         gotomainbtn = (Button)findViewById(R.id.gotoMain);
+
+
         Spinner odq1Spinner = (Spinner)findViewById(R.id.odq1);
-        ArrayAdapter odq1Adapter = ArrayAdapter.createFromResource(this,
+        final ArrayAdapter odq1Adapter = ArrayAdapter.createFromResource(this,
                 R.array.odq1, android.R.layout.simple_spinner_item);
         odq1Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq1Spinner.setAdapter(odq1Adapter);
+
+        odq1Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
 
         Spinner odq2Spinner = (Spinner)findViewById(R.id.odq2);
         ArrayAdapter odq2Adapter = ArrayAdapter.createFromResource(this,
@@ -173,11 +203,29 @@ public class SurveyActivity extends AppCompatActivity{
         odq2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq2Spinner.setAdapter(odq2Adapter);
 
+        odq2Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner odq3Spinner = (Spinner)findViewById(R.id.odq3);
         ArrayAdapter odq3Adapter = ArrayAdapter.createFromResource(this,
                 R.array.odq3, android.R.layout.simple_spinner_item);
         odq3Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq3Spinner.setAdapter(odq3Adapter);
+
+        odq3Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
 
         Spinner odq4Spinner = (Spinner)findViewById(R.id.odq4);
         ArrayAdapter odq4Adapter = ArrayAdapter.createFromResource(this,
@@ -185,11 +233,29 @@ public class SurveyActivity extends AppCompatActivity{
         odq4Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq4Spinner.setAdapter(odq4Adapter);
 
+        odq4Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner odq5Spinner = (Spinner)findViewById(R.id.odq5);
         ArrayAdapter odq5Adapter = ArrayAdapter.createFromResource(this,
                 R.array.odq5, android.R.layout.simple_spinner_item);
         odq5Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq5Spinner.setAdapter(odq5Adapter);
+
+        odq5Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
 
         Spinner odq6Spinner = (Spinner)findViewById(R.id.odq6);
         ArrayAdapter odq6Adapter = ArrayAdapter.createFromResource(this,
@@ -197,11 +263,29 @@ public class SurveyActivity extends AppCompatActivity{
         odq6Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         odq6Spinner.setAdapter(odq6Adapter);
 
+        odq6Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner pnq1Spinner = (Spinner)findViewById(R.id.pnq1);
         ArrayAdapter pnq1Adapter = ArrayAdapter.createFromResource(this,
                 R.array.pnq1, android.R.layout.simple_spinner_item);
         pnq1Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq1Spinner.setAdapter(pnq1Adapter);
+
+        pnq1Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
 
         Spinner pnq2Spinner = (Spinner)findViewById(R.id.pnq2);
         ArrayAdapter pnq2Adapter = ArrayAdapter.createFromResource(this,
@@ -209,11 +293,31 @@ public class SurveyActivity extends AppCompatActivity{
         pnq2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq2Spinner.setAdapter(pnq2Adapter);
 
+        pnq2Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner pnq3Spinner = (Spinner)findViewById(R.id.pnq3);
         ArrayAdapter pnq3Adapter = ArrayAdapter.createFromResource(this,
                 R.array.pnq3, android.R.layout.simple_spinner_item);
         pnq3Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq3Spinner.setAdapter(pnq3Adapter);
+
+        pnq3Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==5)
+                    globalvariable.settemp_value(2);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
 
         Spinner pnq4Spinner = (Spinner)findViewById(R.id.pnq4);
         ArrayAdapter pnq4Adapter = ArrayAdapter.createFromResource(this,
@@ -221,11 +325,32 @@ public class SurveyActivity extends AppCompatActivity{
         pnq4Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq4Spinner.setAdapter(pnq4Adapter);
 
+        pnq4Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner pnq5Spinner = (Spinner)findViewById(R.id.pnq5);
         ArrayAdapter pnq5Adapter = ArrayAdapter.createFromResource(this,
                 R.array.pnq5, android.R.layout.simple_spinner_item);
         pnq5Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq5Spinner.setAdapter(pnq5Adapter);
+
+        pnq5Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==5){
+                    globalvariable.settemp_value(2);
+                }
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
 
         Spinner pnq6Spinner = (Spinner)findViewById(R.id.pnq6);
         ArrayAdapter pnq6Adapter = ArrayAdapter.createFromResource(this,
@@ -233,10 +358,31 @@ public class SurveyActivity extends AppCompatActivity{
         pnq6Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq6Spinner.setAdapter(pnq6Adapter);
 
+        pnq6Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
         Spinner pnq7Spinner = (Spinner)findViewById(R.id.pnq7);
         ArrayAdapter pnq7Adapter = ArrayAdapter.createFromResource(this,
                 R.array.pnq7, android.R.layout.simple_spinner_item);
         pnq7Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pnq7Spinner.setAdapter(pnq7Adapter);
+
+        pnq7Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==5){
+                    globalvariable.settemp_value(2);
+                }
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
     }
 }

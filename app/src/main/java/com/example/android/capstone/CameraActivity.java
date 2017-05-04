@@ -26,10 +26,13 @@ import android.util.Log;
 import android.hardware.Camera.CameraInfo;
 import android.widget.ImageView;
 import android.content.pm.PackageManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
+
+import org.w3c.dom.Text;
 
 public class CameraActivity extends AppCompatActivity {
     private final static String DEBUG_TAG = "CameraActivity";
@@ -37,11 +40,11 @@ public class CameraActivity extends AppCompatActivity {
     private Camera camera;
     private int cameraId = 0;
     private TransferUtility transferUtility;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        GlobalVariable globalvariable = (GlobalVariable)getApplication();
         transferUtility = Util.getTransferUtility(this);
     }
 
