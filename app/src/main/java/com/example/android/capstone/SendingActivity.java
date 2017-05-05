@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,13 +54,21 @@ public class SendingActivity extends AppCompatActivity {
         beginUpload(image_path);
         showMessage();
         mHandler = new Handler();
+
         mHandler.postDelayed(new Runnable(){
             @Override
             public void run(){
-                Intent intent = new Intent(SendingActivity.this,ResultActivity.class);
+                beginDownload();
+            }
+        },5000);
+
+        mHandler.postDelayed(new Runnable(){
+            @Override
+            public void run(){
+                Intent intent = new Intent(SendingActivity.this,SettingActivity.class);
                 startActivity(intent);
             }
-        },20000);
+        },15000);
     }
 
     private void beginUpload(String filePath) {
@@ -76,6 +85,15 @@ public class SendingActivity extends AppCompatActivity {
       //ImageView uploadimage = (ImageView)findViewById(R.id.uploadImage);
       //uploadimage.setImageBitmap(myBitmap);
     }
+
+    private void beginDownload() {
+        // Location to download files from S3 to. You can choose any accessible
+        // file.
+        File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + "result.txt");
+        TransferObserver observer = transferUtility.download(Constants.BUCKET_NAME, "result.txt", file);
+        Toast.makeText(SendingActivity.this,"결과 다운로드",Toast.LENGTH_SHORT).show();
+    }
+
 
     public void showMessage(){
         mHandler = new Handler();
@@ -108,19 +126,19 @@ public class SendingActivity extends AppCompatActivity {
                                                     e.printStackTrace();
                                                 }
                                             }
-                                        }, 7000);
+                                        }, 4000);
                                     }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }, 10000);
+                        }, 4000);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }, 7000);
+        }, 4000);
     }
 
 }

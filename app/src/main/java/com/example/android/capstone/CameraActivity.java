@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,6 +18,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -40,11 +42,13 @@ public class CameraActivity extends AppCompatActivity {
     private Camera camera;
     private int cameraId = 0;
     private TransferUtility transferUtility;
+    Handler mHandler;
+    ProgressDialog mProgressDialog;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        GlobalVariable globalvariable = (GlobalVariable)getApplication();
         transferUtility = Util.getTransferUtility(this);
     }
 
@@ -71,6 +75,21 @@ public class CameraActivity extends AppCompatActivity {
             try {
                 String path = getPath(uri);
                 beginUpload(path);
+                showMessage();
+                mHandler = new Handler();
+                mHandler.postDelayed(new Runnable(){
+                    @Override
+                    public void run(){
+                        beginDownload();
+                    }
+                },5000);
+                mHandler.postDelayed(new Runnable(){
+                    @Override
+                    public void run(){
+                        Intent intent = new Intent(CameraActivity.this,SettingActivity.class);
+                        startActivity(intent);
+                    }
+                },13000);
             } catch (URISyntaxException e) {
                 Toast.makeText(this,
                         "Unable to get the file from the given URI.  See error log for details",
@@ -112,6 +131,60 @@ public class CameraActivity extends AppCompatActivity {
         }
         File file = new File(filePath);
         TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file.getName(), file);
+    }
+
+    private void beginDownload() {
+        // Location to download files from S3 to. You can choose any accessible
+        // file.
+        File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + "result.txt");
+        TransferObserver observer = transferUtility.download(Constants.BUCKET_NAME, "result.txt", file);
+        Toast.makeText(CameraActivity.this,"결과 다운로드",Toast.LENGTH_SHORT).show();
+    }
+
+    public void showMessage(){
+        mHandler = new Handler();
+        mProgressDialog = ProgressDialog.show(CameraActivity.this, "",
+                "사진을 전송합니다.", true);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                        mProgressDialog.dismiss();
+                        mProgressDialog = ProgressDialog.show(CameraActivity.this, "",
+                                "얼굴을 인식합니다.", true);
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                                        mProgressDialog.dismiss();
+                                        mProgressDialog = ProgressDialog.show(CameraActivity.this, "",
+                                                "프로그램을 통해 결과를 출력합니다.", true);
+                                        mHandler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                                                        mProgressDialog.dismiss();
+                                                    }
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }, 4000);
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, 4000);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 4000);
     }
 
     @SuppressLint("NewApi")

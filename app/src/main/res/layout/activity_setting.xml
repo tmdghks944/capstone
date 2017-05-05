@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myTypeView"
+        android:textSize="30dp" />
+    <Button
+        android:id="@+id/typeInitialize"
+        android:onClick="Initialize"
+        android:text="다시 피부타입 설정하기"
+        android:layout_width="match_parent"
+        android:layout_marginTop="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/myTypeView"/>
+</RelativeLayout>
