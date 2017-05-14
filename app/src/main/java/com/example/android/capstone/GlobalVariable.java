@@ -10,6 +10,7 @@ public class GlobalVariable extends Application {
     private int sr_value;      //민감, 저항 수치
     private int wt_value;      //주름 수치
     private int tone_value;
+    private int type_value;
     private boolean surveydone;
     private boolean cameradone;
 
@@ -28,14 +29,22 @@ public class GlobalVariable extends Application {
     public int getsr_value(){ return sr_value; }
     public int getwt_value(){ return wt_value; }
     public int gettone_value(){ return tone_value; }
+    public int gettype_value(){return type_value;}
+
     public boolean getsurveydone(){ return surveydone; }
     public boolean getcameradone(){ return cameradone; }
+
+
+
     public void settemp_value(int temp_value){ this.temp_value=temp_value; }
     public void setod_value(int od_value){ this.od_value=od_value;}
     public void setpn_value(int pn_value){ this.pn_value=pn_value;}
     public void setsr_value(int sr_value){ this.sr_value=sr_value;}
     public void setwt_value(int wt_value){ this.wt_value=wt_value;}
     public void settone_value(int tone_value){this.tone_value=tone_value;}
+    public void settype_value(int type_value){this.type_value=type_value;}
+
     public void setsurveydone(boolean surveydone){ this.surveydone = surveydone; }
     public void setcameradone(boolean cameradone){ this.cameradone = cameradone; }
+
 }

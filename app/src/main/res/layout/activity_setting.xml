@@ -12,12 +12,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/myTypeView"
         android:textSize="30dp" />
+    <TextView
+        android:layout_below="@+id/myTypeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/warningView"
+        android:textSize="25dp"/>
     <Button
         android:id="@+id/typeInitialize"
         android:onClick="Initialize"
         android:text="다시 피부타입 설정하기"
+        android:layout_marginTop="250dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/myTypeView"/>
+        android:layout_below="@id/warningView"
+        android:theme="@style/ThemeOverlay.MyDarkButton"/>
 </RelativeLayout>

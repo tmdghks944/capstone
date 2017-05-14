@@ -63,7 +63,7 @@
 
         <activity
             android:name=".SettingActivity"
-            android:label="설정"
+            android:label="마이페이지"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

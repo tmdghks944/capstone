@@ -129,8 +129,15 @@ public class CameraActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             return;
         }
+        //이 부분에서 파일 이름을 targetfile로 바꿔야함 (기존 사진의 이름을 rename)
+        //밑의 4줄은 파일 형식을 알아오는 것. extension에 jpg가 들어가있음.
         File file = new File(filePath);
-        TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file.getName(), file);
+        String filename = file.getName();
+        String filenameArray[] = filename.split("\\.");
+        String extension = filenameArray[filenameArray.length-1];
+        File file2 = new File(Environment.getExternalStorageDirectory().toString() +"/" + "targetfile."+extension);
+        file.renameTo(file2);
+        TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file2.getName(), file2);
     }
 
     private void beginDownload() {

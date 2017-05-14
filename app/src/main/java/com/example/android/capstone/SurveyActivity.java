@@ -1,4 +1,5 @@
 package com.example.android.capstone;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -68,10 +69,6 @@ public class SurveyActivity extends AppCompatActivity{
                 globalvariable.setsurveydone(true);
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
-                question1.setVisibility(View.VISIBLE);
-                btn1.setVisibility(View.VISIBLE);
-                question13.setVisibility(View.GONE);
-                gotomainbtn.setVisibility(View.GONE);
                 break;
             case R.id.q1:
                 globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());

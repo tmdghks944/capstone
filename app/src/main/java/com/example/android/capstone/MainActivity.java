@@ -7,16 +7,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout mainLinear;
+    LinearLayout question1;
+    LinearLayout question13;
+    Button btn1;
+    Button gotomainbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
+    }
+    public void surveyChange(){
+        question1.setVisibility(View.VISIBLE);
+        btn1.setVisibility(View.VISIBLE);
+        question13.setVisibility(View.GONE);
+        gotomainbtn.setVisibility(View.GONE);
     }
     public void clickMain(View view) {
         switch (view.getId()) {
