@@ -2,6 +2,8 @@ package com.example.android.capstone;
 
 import android.app.Application;
 
+import java.util.HashMap;
+
 public class GlobalVariable extends Application {
     private String user_name;
     private int temp_value;    //설문조사때 값.
@@ -13,11 +15,9 @@ public class GlobalVariable extends Application {
     private int type_value;
     private boolean surveydone;
     private boolean cameradone;
+    private HashMap<String,Integer> warn = new HashMap<String,Integer>();
 
-    public String getusername()
-    {
-        return user_name;
-    }
+    public String getusername() { return user_name; }
     public void setusername(String globalString)
     {
         this.user_name = globalString;
@@ -34,7 +34,15 @@ public class GlobalVariable extends Application {
     public boolean getsurveydone(){ return surveydone; }
     public boolean getcameradone(){ return cameradone; }
 
-
+    public HashMap<String,Integer> getwarn(){
+        return warn;
+    }
+    public void initializewarn(){
+        warn.clear();
+    }
+    public void pushwarn(String str,int val){
+        warn.put(str,new Integer(val));
+    }
 
     public void settemp_value(int temp_value){ this.temp_value=temp_value; }
     public void setod_value(int od_value){ this.od_value=od_value;}
