@@ -31,8 +31,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.android.capstone.data.RecommendlistContract;
-import com.example.android.capstone.data.RecommendlistDbHelper;
+import com.example.android.capstone.data.WaitlistContract;
+import com.example.android.capstone.data.WaitlistDbHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,12 +46,10 @@ public class Menu1Activity extends AppCompatActivity {
     private HashMap<String,Integer> warningmap;
 
 
-    private RecommendlistAdapter mAdapter;
+    private GuestListAdapter mAdapter;
     private SQLiteDatabase mDb;
-    private EditText mNewGuestNameEditText;
-    private EditText mNewPartySizeEditText;
-    private final static String LOG_TAG = MainActivity.class.getSimpleName();
-    Map<String,Integer> map;
+
+    private final static String LOG_TAG = Menu1Activity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -63,14 +61,18 @@ public class Menu1Activity extends AppCompatActivity {
 
 
         RecyclerView waitlistRecyclerView;
+
         waitlistRecyclerView = (RecyclerView) this.findViewById(R.id.all_guests_list_view);
         waitlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecommendlistDbHelper dbHelper = new RecommendlistDbHelper(this);
+        WaitlistDbHelper dbHelper = new WaitlistDbHelper(this);
+
         mDb = dbHelper.getWritableDatabase();
-        mDb.delete("recommendlist",null,null);
+        mDb.delete("waitlist",null,null);
         Cursor cursor = getAllGuests();
-        mAdapter = new RecommendlistAdapter(this, cursor);
+
+        mAdapter = new GuestListAdapter(this, cursor);
         waitlistRecyclerView.setAdapter(mAdapter);
+
         final String[] ids= new String[100];
         final Intent intent = new Intent(this,ResultActivity.class);
         final Map<String,Integer> map = new HashMap<String,Integer>();
@@ -111,7 +113,6 @@ public class Menu1Activity extends AppCompatActivity {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.exists()) {
                                     ids[cosmeticsize[0]]=newcosmetic.getCosmeticId();
-                                    Toast.makeText(Menu1Activity.this,newcosmetic.getCosmeticName(),Toast.LENGTH_SHORT).show();
                                     //allingredient에 각 화장품에 대한 모든 성분이 들어가있음.
                                     cosmeticsize[0]=cosmeticsize[0]+1;
 
@@ -149,33 +150,33 @@ public class Menu1Activity extends AppCompatActivity {
         });
     }
 
-    public void addToWaitlist(String name,int sum) {
+    public void addToWaitlist(String name, int sum) {
         addNewGuest(name, sum);
         mAdapter.swapCursor(getAllGuests());
     }
 
     private Cursor getAllGuests() {
         return mDb.query(
-                RecommendlistContract.RecommendlistEntry.TABLE_NAME,
+                WaitlistContract.WaitlistEntry.TABLE_NAME,
                 null,
                 null,
                 null,
                 null,
                 null,
-                RecommendlistContract.RecommendlistEntry.COLUMN_TIMESTAMP
+                WaitlistContract.WaitlistEntry.COLUMN_TIMESTAMP
         );
     }
 
     private long addNewGuest(String name, int partySize) {
         ContentValues cv = new ContentValues();
-        cv.put(RecommendlistContract.RecommendlistEntry.COLUMN_GUEST_NAME, name);
-        cv.put(RecommendlistContract.RecommendlistEntry.COLUMN_PARTY_SIZE, partySize);
-        return mDb.insert(RecommendlistContract.RecommendlistEntry.TABLE_NAME, null, cv);
+        cv.put(WaitlistContract.WaitlistEntry.COLUMN_GUEST_NAME, name);
+        cv.put(WaitlistContract.WaitlistEntry.COLUMN_PARTY_SIZE, partySize);
+        return mDb.insert(WaitlistContract.WaitlistEntry.TABLE_NAME, null, cv);
     }
 
     private boolean removeGuest(long id) {
         // COMPLETED (2) Inside, call mDb.delete to pass in the TABLE_NAME and the condition that WaitlistEntry._ID equals id
-        return mDb.delete(RecommendlistContract.RecommendlistEntry.TABLE_NAME, RecommendlistContract.RecommendlistEntry._ID + "=" + id, null) > 0;
+        return mDb.delete(WaitlistContract.WaitlistEntry.TABLE_NAME, WaitlistContract.WaitlistEntry._ID + "=" + id, null) > 0;
     }
 
     public static List sortByValue(final Map map) {

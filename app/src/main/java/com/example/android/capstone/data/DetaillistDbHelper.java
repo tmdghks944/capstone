@@ -1,22 +1,21 @@
 package com.example.android.capstone.data;
 
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.android.capstone.data.RecommendlistContract.*;
+import com.example.android.capstone.data.DetaillistContract.*;
 
-public class RecommendlistDbHelper extends SQLiteOpenHelper {
+public class DetaillistDbHelper extends SQLiteOpenHelper {
 
     // The database name
-    private static final String DATABASE_NAME = "recommendlist.db";
+    private static final String DATABASE_NAME = "detaillist.db";
 
     // If you change the database schema, you must increment the database version
     private static final int DATABASE_VERSION = 1;
 
     // Constructor
-    public RecommendlistDbHelper(Context context) {
+    public DetaillistDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -24,14 +23,14 @@ public class RecommendlistDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         // Create a table to hold waitlist data
-        final String SQL_CREATE_WAITLIST_TABLE = "CREATE TABLE " + RecommendlistEntry.TABLE_NAME + " (" +
-                RecommendlistEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                RecommendlistEntry.COLUMN_GUEST_NAME + " TEXT NOT NULL, " +
-                RecommendlistEntry.COLUMN_PARTY_SIZE + " INTEGER NOT NULL, " +
-                RecommendlistEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+        final String SQL_CREATE_DETAILLIST_TABLE = "CREATE TABLE " + DetaillistEntry.TABLE_NAME + " (" +
+                DetaillistEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                DetaillistEntry.COLUMN_DETAIL_NAME + " TEXT NOT NULL, " +
+                DetaillistEntry.COLUMN_DETAIL_SIZE + " INTEGER NOT NULL, " +
+                DetaillistEntry.COLUMN_TIMESTAMPP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 "); ";
 
-        sqLiteDatabase.execSQL(SQL_CREATE_WAITLIST_TABLE);
+        sqLiteDatabase.execSQL(SQL_CREATE_DETAILLIST_TABLE);
     }
 
     @Override
@@ -40,8 +39,7 @@ public class RecommendlistDbHelper extends SQLiteOpenHelper {
         // DATABASE_VERSION the table will be dropped.
         // In a production app, this method might be modified to ALTER the table
         // instead of dropping it, so that existing data is not deleted.
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RecommendlistEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DetaillistEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
-
 }

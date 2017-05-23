@@ -6,16 +6,6 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/name_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:textSize="16sp"
-        android:text="[guestname]"/>
-
-    <TextView
         android:id="@+id/party_size_text_view"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -25,6 +15,17 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        android:text="[defaultsize]"/>
+        android:text="[PartySize]"/>
+
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textSize="16sp"
+        android:text="[GuestName]"/>
+
 
 </LinearLayout>

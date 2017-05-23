@@ -8,37 +8,44 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.android.capstone.data.RecommendlistContract;
+import com.example.android.capstone.data.WaitlistContract;
 
-public class RecommendlistAdapter extends RecyclerView.Adapter<RecommendlistAdapter.RecommendViewHolder>{
 
+public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.GuestViewHolder> {
+
+    // Holds on to the cursor to display the waitlist
     private Cursor mCursor;
     private Context mContext;
 
-    public RecommendlistAdapter(Context context, Cursor cursor) {
+    /**
+     * Constructor using the context and the db cursor
+     * @param context the calling context/activity
+     * @param cursor the db cursor with waitlist data to display
+     */
+    public GuestListAdapter(Context context, Cursor cursor) {
         this.mContext = context;
         this.mCursor = cursor;
     }
 
     @Override
-    public RecommendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GuestViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // Get the RecyclerView item layout
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.guest_list_item, parent, false);
-        return new RecommendViewHolder(view);
+        return new GuestViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RecommendViewHolder holder, int position) {
+    public void onBindViewHolder(GuestViewHolder holder, int position) {
         // Move the mCursor to the position of the item to be displayed
         if (!mCursor.moveToPosition(position))
             return; // bail if returned null
 
         // Update the view holder with the information needed to display
-        String name = mCursor.getString(mCursor.getColumnIndex(RecommendlistContract.RecommendlistEntry.COLUMN_GUEST_NAME));
-        int partySize = mCursor.getInt(mCursor.getColumnIndex(RecommendlistContract.RecommendlistEntry.COLUMN_PARTY_SIZE));
+        String name = mCursor.getString(mCursor.getColumnIndex(WaitlistContract.WaitlistEntry.COLUMN_GUEST_NAME));
+        int partySize = mCursor.getInt(mCursor.getColumnIndex(WaitlistContract.WaitlistEntry.COLUMN_PARTY_SIZE));
         // COMPLETED (6) Retrieve the id from the cursor and
-        long id = mCursor.getLong(mCursor.getColumnIndex(RecommendlistContract.RecommendlistEntry._ID));
+        long id = mCursor.getLong(mCursor.getColumnIndex(WaitlistContract.WaitlistEntry._ID));
 
         // Display the guest name
         holder.nameTextView.setText(name);
@@ -73,17 +80,16 @@ public class RecommendlistAdapter extends RecyclerView.Adapter<RecommendlistAdap
     /**
      * Inner class to hold the views needed to display a single item in the recycler-view
      */
-    class RecommendViewHolder extends RecyclerView.ViewHolder {
+    class GuestViewHolder extends RecyclerView.ViewHolder {
 
         // Will display the guest name
         TextView nameTextView;
         // Will display the party size number
         TextView partySizeTextView;
-
-        public RecommendViewHolder(View itemView) {
+        public GuestViewHolder(View itemView) {
             super(itemView);
             nameTextView = (TextView) itemView.findViewById(R.id.name_text_view);
-            partySizeTextView = (TextView) itemView.findViewById(R.id.detail_party_size_text_view);
+            partySizeTextView = (TextView) itemView.findViewById(R.id.party_size_text_view);
         }
 
     }
