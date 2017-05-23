@@ -8,6 +8,6 @@ public class DetaillistContract {
         public static final String TABLE_NAME = "detaillist";
         public static final String COLUMN_DETAIL_NAME = "detailName";
         public static final String COLUMN_DETAIL_SIZE = "detailSize";
-        public static final String COLUMN_TIMESTAMPP = "timestampp";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
     }
 }

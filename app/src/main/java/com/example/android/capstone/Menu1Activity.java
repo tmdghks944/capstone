@@ -74,8 +74,11 @@ public class Menu1Activity extends AppCompatActivity {
         waitlistRecyclerView.setAdapter(mAdapter);
 
         final String[] ids= new String[100];
-        final Intent intent = new Intent(this,ResultActivity.class);
+        final String[] names = new String[100];
+
         final Map<String,Integer> map = new HashMap<String,Integer>();
+
+        final Intent intent = new Intent(this,ResultActivity.class);
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -85,11 +88,12 @@ public class Menu1Activity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                startActivity(intent);
                 long id = (long) viewHolder.itemView.getTag();
                 globalvariable.setdetailid(ids[viewHolder.getAdapterPosition()]);
+                globalvariable.setdetailname(names[viewHolder.getAdapterPosition()]);
                 //removeGuest(id);
                 mAdapter.swapCursor(getAllGuests());
+                startActivity(intent);
             }
         }).attachToRecyclerView(waitlistRecyclerView);
 
@@ -113,6 +117,7 @@ public class Menu1Activity extends AppCompatActivity {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.exists()) {
                                     ids[cosmeticsize[0]]=newcosmetic.getCosmeticId();
+                                    names[cosmeticsize[0]]=newcosmetic.getCosmeticName();
                                     //allingredient에 각 화장품에 대한 모든 성분이 들어가있음.
                                     cosmeticsize[0]=cosmeticsize[0]+1;
 

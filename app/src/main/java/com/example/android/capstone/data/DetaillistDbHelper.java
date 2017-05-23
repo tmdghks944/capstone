@@ -12,7 +12,7 @@ public class DetaillistDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "detaillist.db";
 
     // If you change the database schema, you must increment the database version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     // Constructor
     public DetaillistDbHelper(Context context) {
@@ -27,7 +27,7 @@ public class DetaillistDbHelper extends SQLiteOpenHelper {
                 DetaillistEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 DetaillistEntry.COLUMN_DETAIL_NAME + " TEXT NOT NULL, " +
                 DetaillistEntry.COLUMN_DETAIL_SIZE + " INTEGER NOT NULL, " +
-                DetaillistEntry.COLUMN_TIMESTAMPP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                DetaillistEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 "); ";
 
         sqLiteDatabase.execSQL(SQL_CREATE_DETAILLIST_TABLE);

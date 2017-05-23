@@ -16,6 +16,7 @@ public class GlobalVariable extends Application {
     private boolean surveydone;
     private boolean cameradone;
     private String detailid;
+    private String detailname;
 
     private HashMap<String,Integer> warn = new HashMap<String,Integer>();
 
@@ -25,8 +26,11 @@ public class GlobalVariable extends Application {
         this.user_name = globalString;
     }
 
-    public String getDetailid(){return detailid;}
+    public String getdetailid(){return detailid;}
     public void setdetailid(String detailid){this.detailid=detailid;}
+
+    public String getdetailname(){return detailname;}
+    public void setdetailname(String detailname){this.detailname=detailname;}
 
     public int gettemp_value(){ return temp_value; }
     public int getod_value(){ return od_value; }

@@ -12,7 +12,7 @@ public class WaitlistDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "waitlist.db";
 
     // If you change the database schema, you must increment the database version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     // Constructor
     public WaitlistDbHelper(Context context) {

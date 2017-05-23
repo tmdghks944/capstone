@@ -15,11 +15,12 @@
         android:layout_height="wrap_content"
         android:text="DetailView."
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:id="@+id/Detailtext"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/all_details_list_view"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/Detailtext"/>
