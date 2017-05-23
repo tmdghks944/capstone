@@ -12,9 +12,16 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="스킨로션 메뉴입니다."
         android:textAlignment="center"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:id="@+id/menu1text"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/all_guests_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/menu1text"/>
 
 </RelativeLayout>

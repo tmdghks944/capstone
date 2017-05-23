@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
     tools:context="com.example.android.capstone.ResultActivity">
-    <LinearLayout
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DetailView."
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:id="@+id/Detailtext"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/all_details_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="461dp" />
-        <Button
-            android:id="@+id/showResultbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="showResult"
-            android:text="결과보기"/>
-    </LinearLayout>
-</FrameLayout>
+        android:layout_below="@+id/Detailtext"/>
+
+</RelativeLayout>

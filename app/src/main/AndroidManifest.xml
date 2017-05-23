@@ -71,12 +71,14 @@
         </activity>
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".SendingActivity" />
+            android:parentActivityName=".Menu1Activity" />
         <activity
             android:name=".FirebaseActivity"
             android:parentActivityName=".MainActivity" />
 
-        <activity android:name=".CosmeticActivity"></activity>
+        <activity android:name=".CosmeticActivity">
+
+        </activity>
     </application>
 
 </manifest>
