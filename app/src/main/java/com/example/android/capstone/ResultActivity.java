@@ -25,16 +25,21 @@ import com.example.android.capstone.data.DetaillistDbHelper;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
+
 public class ResultActivity extends AppCompatActivity {
 
     private DetailListAdapter mAdapter;
     private SQLiteDatabase mDb1;
     private TextView textView;
+    private HashMap<String,Integer> warningmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        final GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        warningmap = globalvariable.getwarn();
         RecyclerView detailRecyclerView;
 
         detailRecyclerView = (RecyclerView) this.findViewById(R.id.all_details_list_view);
@@ -75,6 +80,12 @@ public class ResultActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot allingredients : dataSnapshot.getChildren()) {
                         Ingredient newingredient = allingredients.getValue(Ingredient.class);
+                        if(warningmap.containsKey(newingredient.getIngredientName())){//해당 성분이 유해하면 하이라이팅
+                            globalvariable.sethighright(true);
+                        }
+                        else{
+                            globalvariable.sethighright(false);
+                        }
                         addToWaitlist(newingredient.getIngredientName(),newingredient.getIngredientDanger());
                     }
                 }

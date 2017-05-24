@@ -7,21 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.android.capstone.data.DetaillistContract;
-
 
 public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.DetailViewHolder> {
 
-    // Holds on to the cursor to display the waitlist
     private Cursor mCursor;
     private Context mContext;
 
-    /**
-     * Constructor using the context and the db cursor
-     * @param context the calling context/activity
-     * @param cursor the db cursor with waitlist data to display
-     */
     public DetailListAdapter(Context context, Cursor cursor) {
         this.mContext = context;
         this.mCursor = cursor;
@@ -37,10 +29,9 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
 
     @Override
     public void onBindViewHolder(DetailViewHolder holder, int position) {
-        // Move the mCursor to the position of the item to be displayed
-        if (!mCursor.moveToPosition(position))
-            return; // bail if returned null
 
+        if (!mCursor.moveToPosition(position))
+            return;
         // Update the view holder with the information needed to display
         String name = mCursor.getString(mCursor.getColumnIndex(DetaillistContract.DetaillistEntry.COLUMN_DETAIL_NAME));
         int partySize = mCursor.getInt(mCursor.getColumnIndex(DetaillistContract.DetaillistEntry.COLUMN_DETAIL_SIZE));
@@ -49,8 +40,19 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
 
         // Display the guest name
         holder.nameTextView.setText(name);
+
         // Display the party count
         holder.partySizeTextView.setText(String.valueOf(partySize));
+        if(partySize>=0 && partySize<=2){
+            holder.partySizeTextView.setBackgroundResource(R.drawable.circle);
+        }
+        else if(partySize>=3 && partySize<=6){
+            holder.partySizeTextView.setBackgroundResource(R.drawable.circle1);
+        }
+        else{
+            holder.partySizeTextView.setBackgroundResource(R.drawable.circle2);
+        }
+
         // COMPLETED (7) Set the tag of the itemview in the holder to the id
         holder.itemView.setTag(id);
     }
@@ -71,8 +73,8 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
         }
     }
 
-    class DetailViewHolder extends RecyclerView.ViewHolder {
 
+    class DetailViewHolder extends RecyclerView.ViewHolder {
         // Will display the guest name
         TextView nameTextView;
         // Will display the party size number
@@ -82,6 +84,5 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
             nameTextView = (TextView) itemView.findViewById(R.id.detail_name_text_view);
             partySizeTextView = (TextView) itemView.findViewById(R.id.detail_party_size_text_view);
         }
-
     }
 }

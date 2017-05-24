@@ -1,14 +1,18 @@
 package com.example.android.capstone;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.capstone.data.WaitlistContract;
+
+import java.util.Dictionary;
 
 
 public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.GuestViewHolder> {
@@ -16,7 +20,6 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
     // Holds on to the cursor to display the waitlist
     private Cursor mCursor;
     private Context mContext;
-
     /**
      * Constructor using the context and the db cursor
      * @param context the calling context/activity
@@ -51,7 +54,17 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
         holder.nameTextView.setText(name);
         // Display the party count
         holder.partySizeTextView.setText(String.valueOf(partySize));
-        // COMPLETED (7) Set the tag of the itemview in the holder to the id
+
+        if(partySize>=0 && partySize<=2){
+            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle);
+        }
+        else if(partySize>=3 && partySize<=6){
+            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle1);
+        }
+        else{
+            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle2);
+        }
+
         holder.itemView.setTag(id);
     }
 

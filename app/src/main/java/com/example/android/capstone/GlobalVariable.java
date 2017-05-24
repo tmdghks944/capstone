@@ -17,6 +17,7 @@ public class GlobalVariable extends Application {
     private boolean cameradone;
     private String detailid;
     private String detailname;
+    private boolean highlight;
 
     private HashMap<String,Integer> warn = new HashMap<String,Integer>();
 
@@ -40,6 +41,7 @@ public class GlobalVariable extends Application {
     public int gettone_value(){ return tone_value; }
     public int gettype_value(){return type_value;}
 
+    public boolean gethighlight(){return highlight;}
     public boolean getsurveydone(){ return surveydone; }
     public boolean getcameradone(){ return cameradone; }
 
@@ -63,5 +65,5 @@ public class GlobalVariable extends Application {
 
     public void setsurveydone(boolean surveydone){ this.surveydone = surveydone; }
     public void setcameradone(boolean cameradone){ this.cameradone = cameradone; }
-
+    public void sethighright(boolean highlight){this.highlight=highlight;}
 }

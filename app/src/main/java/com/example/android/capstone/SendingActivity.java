@@ -60,7 +60,7 @@ public class SendingActivity extends AppCompatActivity {
             public void run(){
                 beginDownload();
             }
-        },5000);
+        },7000);
 
         mHandler.postDelayed(new Runnable(){
             @Override
