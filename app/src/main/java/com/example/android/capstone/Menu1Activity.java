@@ -80,22 +80,34 @@ public class Menu1Activity extends AppCompatActivity {
 
         final Intent intent = new Intent(this,ResultActivity.class);
 
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        waitlistRecyclerView.addOnItemTouchListener(new RecyclerViewTouchListener(getApplicationContext(), waitlistRecyclerView, new RecyclerViewClickListener() {
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                long id = (long) viewHolder.itemView.getTag();
-                globalvariable.setdetailid(ids[viewHolder.getAdapterPosition()]);
-                globalvariable.setdetailname(names[viewHolder.getAdapterPosition()]);
+            public void onClick(View view, int position) {
+                globalvariable.setdetailid(ids[position]);
+                globalvariable.setdetailname(names[position]);
                 //removeGuest(id);
                 mAdapter.swapCursor(getAllGuests());
                 startActivity(intent);
             }
-        }).attachToRecyclerView(waitlistRecyclerView);
+
+            @Override
+            public void onLongClick(View view, int position) {
+                Toast.makeText(getApplicationContext(), String.valueOf(position) + " is long pressed!", Toast.LENGTH_SHORT).show();
+
+            }
+        }));
+//        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+//            @Override
+//            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+//                long id = (long) viewHolder.itemView.getTag();
+
+//            }
+//        }).attachToRecyclerView(waitlistRecyclerView);
 
 
         final int[] cosmeticsize={0};
