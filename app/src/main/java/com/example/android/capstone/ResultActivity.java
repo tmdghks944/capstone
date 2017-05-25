@@ -55,7 +55,7 @@ public class ResultActivity extends AppCompatActivity {
         mAdapter = new DetailListAdapter(this, cursor);
         detailRecyclerView.setAdapter(mAdapter);
 
-        String targetid = globalvariable.getdetailid();
+        final String[] targetid = {new String()};
         String targetname = globalvariable.getdetailname();
         textView = (TextView)findViewById(R.id.Detailtext);
         textView.setText(targetname + "의 세부성분입니다.");
@@ -75,20 +75,36 @@ public class ResultActivity extends AppCompatActivity {
         }));
 
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        Query query = reference.child("ingredients").child(targetid);
+        Query query = reference.child("cosmetics").orderByChild("cosmeticName").equalTo(targetname);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    for (DataSnapshot allingredients : dataSnapshot.getChildren()) {
-                        Ingredient newingredient = allingredients.getValue(Ingredient.class);
-                        if(warningmap.containsKey(newingredient.getIngredientName())){//해당 성분이 유해하면 하이라이팅
-                            globalvariable.sethighright(true);
-                        }
-                        else{
-                            globalvariable.sethighright(false);
-                        }
-                        addToWaitlist(newingredient.getIngredientName(),newingredient.getIngredientDanger());
+                    for (DataSnapshot targetcosmetic : dataSnapshot.getChildren()) {
+                        Cosmetic newcosmetic = targetcosmetic.getValue(Cosmetic.class);
+                        targetid[0] = newcosmetic.getCosmeticId();
+                        Query query2 = reference.child("ingredients").child(targetid[0]);
+                        query2.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()) {
+                                    for (DataSnapshot allingredients : dataSnapshot.getChildren()) {
+                                        Ingredient newingredient = allingredients.getValue(Ingredient.class);
+                                        if(warningmap.containsKey(newingredient.getIngredientName())){//해당 성분이 유해하면 하이라이팅
+                                            globalvariable.sethighright(true);
+                                        }
+                                        else{
+                                            globalvariable.sethighright(false);
+                                        }
+                                        addToWaitlist(newingredient.getIngredientName(),newingredient.getIngredientDanger());
+                                    }
+                                }
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
                     }
                 }
             }
@@ -97,6 +113,9 @@ public class ResultActivity extends AppCompatActivity {
 
             }
         });
+        //해당하는 아이디를 찾았으면 그 화장품의 성분을 나열.
+
+
 
     }
 

@@ -87,10 +87,7 @@ public class Menu1Activity extends AppCompatActivity {
         waitlistRecyclerView.addOnItemTouchListener(new RecyclerViewTouchListener(getApplicationContext(), waitlistRecyclerView, new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                globalvariable.setdetailid(ids[position]);
                 globalvariable.setdetailname(names[position]);
-                //removeGuest(id);
-                //Toast.makeText(Menu1Activity.this,names[position],Toast.LENGTH_SHORT).show();
                 mAdapter.swapCursor(getAllGuests());
                 startActivity(intent);
             }
@@ -142,26 +139,6 @@ public class Menu1Activity extends AppCompatActivity {
                                             names[idx[0]]=temp;
                                             addToWaitlist(temp,map.get(temp).intValue());
                                             idx[0]++;
-                                            //이름이 temp인 cosmeticid찾기.
-                                            Query query3 = reference.child("cosmetics").orderByChild("cosmeticName").equalTo(names[idx2[0]]);
-                                            query3.addListenerForSingleValueEvent(new ValueEventListener() {
-                                                @Override
-                                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                                    if (dataSnapshot.exists()) {
-                                                        //Cosmetic idcosmetic = new Cosmetic();
-                                                        for (DataSnapshot allcos : dataSnapshot.getChildren()) { //
-                                                            Cosmetic tempcosmetic = allcos.getValue(Cosmetic.class);
-                                                            ids[idx2[0]]=tempcosmetic.getCosmeticId();
-                                                            idx2[0]++;
-                                                        }
-                                                    }
-                                                }
-                                                @Override
-                                                public void onCancelled(DatabaseError databaseError) {
-
-                                                }
-                                            });
-
                                         }
                                     }
                                 }
