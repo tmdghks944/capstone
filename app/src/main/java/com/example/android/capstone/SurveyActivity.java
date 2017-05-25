@@ -392,6 +392,10 @@ public class SurveyActivity extends AppCompatActivity{
 
             }
         });
+
+
+
+
     }
 }
 /* 이게 선택으로 클릭하면 토스트메세지 나오는 버전

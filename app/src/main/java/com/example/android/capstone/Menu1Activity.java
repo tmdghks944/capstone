@@ -96,19 +96,6 @@ public class Menu1Activity extends AppCompatActivity {
 
             }
         }));
-//        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-//            @Override
-//            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-//                return false;
-//            }
-//
-//            @Override
-//            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-//                long id = (long) viewHolder.itemView.getTag();
-
-//            }
-//        }).attachToRecyclerView(waitlistRecyclerView);
-
 
         final int[] cosmeticsize={0};
         final int[] targetsize={0};

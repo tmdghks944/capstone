@@ -13,6 +13,7 @@ public class GlobalVariable extends Application {
     private int wt_value;      //주름 수치
     private int tone_value;
     private int type_value;
+    private int user_age;
     private boolean surveydone;
     private boolean cameradone;
     private String detailid;
@@ -42,6 +43,7 @@ public class GlobalVariable extends Application {
     public int gettype_value(){return type_value;}
 
     public boolean gethighlight(){return highlight;}
+    public int getuser_age(){return user_age;}
     public boolean getsurveydone(){ return surveydone; }
     public boolean getcameradone(){ return cameradone; }
 
@@ -54,6 +56,7 @@ public class GlobalVariable extends Application {
     public void pushwarn(String str,int val){
         warn.put(str,new Integer(val));
     }
+    public void setuser_age(int user_age){this.user_age=user_age;}
 
     public void settemp_value(int temp_value){ this.temp_value=temp_value; }
     public void setod_value(int od_value){ this.od_value=od_value;}
