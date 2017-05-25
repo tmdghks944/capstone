@@ -3,6 +3,7 @@ package com.example.android.capstone;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import android.content.ContentValues;
@@ -57,20 +59,20 @@ public class ResultActivity extends AppCompatActivity {
         String targetname = globalvariable.getdetailname();
         textView = (TextView)findViewById(R.id.Detailtext);
         textView.setText(targetname + "의 세부성분입니다.");
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        detailRecyclerView.addItemDecoration(new DividerItemDecoration(ResultActivity.this,
+                DividerItemDecoration.VERTICAL));
 
-            // COMPLETED (4) Override onMove and simply return false inside
+        detailRecyclerView.addOnItemTouchListener(new RecyclerViewTouchListener(getApplicationContext(), detailRecyclerView, new RecyclerViewClickListener() {
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                long id = (long) viewHolder.itemView.getTag();
+            public void onClick(View view, int position) {
                 mAdapter.swapCursor(getAllGuests());
             }
-        }).attachToRecyclerView(detailRecyclerView);
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
 
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         Query query = reference.child("ingredients").child(targetid);

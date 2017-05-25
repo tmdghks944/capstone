@@ -120,7 +120,7 @@ public class SettingActivity extends AppCompatActivity {
         else
             type+='O';
 
-        if(globalvariable.getsr_value()==1)
+        if(globalvariable.getsr_value()==1)//sr이 0이더라도 알레르기가 있으면 s로 판단.
             type+='S';
         else
             type+='R';
@@ -130,7 +130,56 @@ public class SettingActivity extends AppCompatActivity {
         else
             type+='P';
 
-        if(globalvariable.getwt_value()>=1)
+        //나이에따른 wt
+//        if(globalvariable.getuser_age()<=29){
+//            if(globalvariable.getwt_value()>=24){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+//        else if(globalvariable.getuser_age()<=39){
+//            if(globalvariable.getwt_value()>=38){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+//        else if(globalvariable.getuser_age()<=49){
+//            if(globalvariable.getwt_value()>=51){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+//        else if(globalvariable.getuser_age()<=59){
+//            if(globalvariable.getwt_value()>=62){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+//        else if(globalvariable.getuser_age()<=69){
+//            if(globalvariable.getwt_value()>=68){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+//        else{
+//            if(globalvariable.getwt_value()>=74){
+//                type+='W';
+//            }
+//            else{
+//                type+='T';
+//            }
+//        }
+        if(globalvariable.getwt_value()>=1)//나이따라.
             type+='W';
         else
             type+='T';

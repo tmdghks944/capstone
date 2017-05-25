@@ -27,5 +27,4 @@
         android:textSize="16sp"
         android:text="[GuestName]"/>
 
-
 </LinearLayout>

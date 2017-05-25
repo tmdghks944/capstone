@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="이런 화장품은 어떠세요?\n 자세한 성분은 옆으로 밀어 확인하세요"
+        android:text="이런 화장품은 어떠세요?\n자세한 성분을 확인해보세요"
         android:textAlignment="center"
         android:textSize="20dp"
         android:id="@+id/menu1text"/>

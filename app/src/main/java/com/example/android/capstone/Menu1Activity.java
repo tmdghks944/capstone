@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -57,6 +58,7 @@ public class Menu1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_menu1);
 
         final GlobalVariable globalvariable = (GlobalVariable)getApplication();
+
         warningmap = globalvariable.getwarn(); //WARNINGMAP에 사용자의 비추천 성분과 EWG가 들어있음.
 
 
@@ -79,6 +81,8 @@ public class Menu1Activity extends AppCompatActivity {
         final Map<String,Integer> map = new HashMap<String,Integer>();
 
         final Intent intent = new Intent(this,ResultActivity.class);
+        waitlistRecyclerView.addItemDecoration(new DividerItemDecoration(Menu1Activity.this,
+                DividerItemDecoration.VERTICAL));
 
         waitlistRecyclerView.addOnItemTouchListener(new RecyclerViewTouchListener(getApplicationContext(), waitlistRecyclerView, new RecyclerViewClickListener() {
             @Override
@@ -86,14 +90,14 @@ public class Menu1Activity extends AppCompatActivity {
                 globalvariable.setdetailid(ids[position]);
                 globalvariable.setdetailname(names[position]);
                 //removeGuest(id);
+                //Toast.makeText(Menu1Activity.this,names[position],Toast.LENGTH_SHORT).show();
                 mAdapter.swapCursor(getAllGuests());
                 startActivity(intent);
             }
 
             @Override
             public void onLongClick(View view, int position) {
-                Toast.makeText(getApplicationContext(), String.valueOf(position) + " is long pressed!", Toast.LENGTH_SHORT).show();
-
+                //Toast.makeText(getApplicationContext(), String.valueOf(position) + " is long pressed!", Toast.LENGTH_SHORT).show();
             }
         }));
 
@@ -115,8 +119,6 @@ public class Menu1Activity extends AppCompatActivity {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.exists()) {
-                                    ids[cosmeticsize[0]]=newcosmetic.getCosmeticId();
-                                    names[cosmeticsize[0]]=newcosmetic.getCosmeticName();
                                     //allingredient에 각 화장품에 대한 모든 성분이 들어가있음.
                                     cosmeticsize[0]=cosmeticsize[0]+1;
 
@@ -130,11 +132,36 @@ public class Menu1Activity extends AppCompatActivity {
                                     map.put(newcosmetic.getCosmeticName(),Integer.valueOf(ewgsum[0]));
                                     ewgsum[0]=0;
 
+                                    //다 넣으면 정렬에 들어간다.
                                     if(targetsize[0] == cosmeticsize[0]) {
+                                        final int[] idx={0};
+                                        final int[] idx2={0};
                                         Iterator it = sortByValue(map).iterator();
                                         while (it.hasNext()) {
-                                            String temp = (String) it.next();
-                                            addToWaitlist(temp, map.get(temp).intValue());
+                                            final String temp = (String) it.next();
+                                            names[idx[0]]=temp;
+                                            addToWaitlist(temp,map.get(temp).intValue());
+                                            idx[0]++;
+                                            //이름이 temp인 cosmeticid찾기.
+                                            Query query3 = reference.child("cosmetics").orderByChild("cosmeticName").equalTo(names[idx2[0]]);
+                                            query3.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    if (dataSnapshot.exists()) {
+                                                        //Cosmetic idcosmetic = new Cosmetic();
+                                                        for (DataSnapshot allcos : dataSnapshot.getChildren()) { //
+                                                            Cosmetic tempcosmetic = allcos.getValue(Cosmetic.class);
+                                                            ids[idx2[0]]=tempcosmetic.getCosmeticId();
+                                                            idx2[0]++;
+                                                        }
+                                                    }
+                                                }
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+
+                                                }
+                                            });
+
                                         }
                                     }
                                 }
