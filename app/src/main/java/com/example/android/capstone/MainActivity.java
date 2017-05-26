@@ -10,23 +10,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout mainLinear;
     LinearLayout question1;
-    LinearLayout question13;
+    LinearLayout question17;
     Button btn1;
     Button gotomainbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        Toast.makeText(MainActivity.this,String.valueOf(globalvariable.getsurvey_sr_value()),Toast.LENGTH_SHORT).show();
         mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
     }
     public void surveyChange(){
         question1.setVisibility(View.VISIBLE);
         btn1.setVisibility(View.VISIBLE);
-        question13.setVisibility(View.GONE);
+        question17.setVisibility(View.GONE);
         gotomainbtn.setVisibility(View.GONE);
     }
     public void clickMain(View view) {

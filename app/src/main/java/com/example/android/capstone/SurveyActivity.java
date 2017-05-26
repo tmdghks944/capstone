@@ -29,6 +29,10 @@ public class SurveyActivity extends AppCompatActivity{
     LinearLayout question11;
     LinearLayout question12;
     LinearLayout question13;
+    LinearLayout question14;
+    LinearLayout question15;
+    LinearLayout question16;
+    LinearLayout question17;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -41,6 +45,10 @@ public class SurveyActivity extends AppCompatActivity{
     Button btn10;
     Button btn11;
     Button btn12;
+    Button btn13;
+    Button btn14;
+    Button btn15;
+    Button btn16;
     Button gotomainbtn;
 
     @Override
@@ -64,8 +72,8 @@ public class SurveyActivity extends AppCompatActivity{
     public void clickBtn(View view) {
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
         switch (view.getId()) {
-            case R.id.gotoMain:
-                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+            case R.id.gotoMain://이제 이게 sr측정하는걸로바뀐다.
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
                 globalvariable.setsurveydone(true);
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
@@ -147,11 +155,39 @@ public class SurveyActivity extends AppCompatActivity{
                 question12.setVisibility(View.VISIBLE);
                 btn12.setVisibility(View.VISIBLE);
                 break;
-            case R.id.q12:
+            case R.id.q12://원래 메인가는 버튼.
                 globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
                 question12.setVisibility(View.GONE);
                 btn12.setVisibility(View.GONE);
                 question13.setVisibility(View.VISIBLE);
+                btn13.setVisibility(View.VISIBLE);
+                break;
+            case R.id.q13://
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question13.setVisibility(View.GONE);
+                btn13.setVisibility(View.GONE);
+                question14.setVisibility(View.VISIBLE);
+                btn14.setVisibility(View.VISIBLE);
+                break;
+            case R.id.q14:
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question14.setVisibility(View.GONE);
+                btn14.setVisibility(View.GONE);
+                question15.setVisibility(View.VISIBLE);
+                btn15.setVisibility(View.VISIBLE);
+                break;
+            case R.id.q15:
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question15.setVisibility(View.GONE);
+                btn15.setVisibility(View.GONE);
+                question16.setVisibility(View.VISIBLE);
+                btn16.setVisibility(View.VISIBLE);
+                break;
+            case R.id.q16:
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question16.setVisibility(View.GONE);
+                btn16.setVisibility(View.GONE);
+                question17.setVisibility(View.VISIBLE);
                 gotomainbtn.setVisibility(View.VISIBLE);
                 break;
         }
@@ -173,6 +209,12 @@ public class SurveyActivity extends AppCompatActivity{
         question11 = (LinearLayout)findViewById(R.id.survey11);
         question12 = (LinearLayout)findViewById(R.id.survey12);
         question13 = (LinearLayout)findViewById(R.id.survey13);
+        question14 = (LinearLayout)findViewById(R.id.survey14);
+        question15 = (LinearLayout)findViewById(R.id.survey15);
+        question16 = (LinearLayout)findViewById(R.id.survey16);
+        question17 = (LinearLayout)findViewById(R.id.survey17);
+
+
 
         btn1 = (Button)findViewById(R.id.q1);
         btn2 = (Button)findViewById(R.id.q2);
@@ -186,6 +228,10 @@ public class SurveyActivity extends AppCompatActivity{
         btn10 = (Button)findViewById(R.id.q10);
         btn11 = (Button)findViewById(R.id.q11);
         btn12 = (Button)findViewById(R.id.q12);
+        btn13 = (Button)findViewById(R.id.q13);
+        btn14 = (Button)findViewById(R.id.q14);
+        btn15 = (Button)findViewById(R.id.q15);
+        btn16 = (Button)findViewById(R.id.q16);
         gotomainbtn = (Button)findViewById(R.id.gotoMain);
 
 
@@ -393,9 +439,74 @@ public class SurveyActivity extends AppCompatActivity{
             }
         });
 
+        Spinner srq1Spinner = (Spinner)findViewById(R.id.srq1);
+        ArrayAdapter srq1Adapter = ArrayAdapter.createFromResource(this,
+                R.array.srq1, android.R.layout.simple_spinner_item);
+        srq1Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        srq1Spinner.setAdapter(srq1Adapter);
 
+        srq1Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==5){
+                    globalvariable.settemp_value(2);
+                }
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
 
+            }
+        });
 
+        Spinner srq2Spinner = (Spinner)findViewById(R.id.srq2);
+        ArrayAdapter srq2Adapter = ArrayAdapter.createFromResource(this,
+                R.array.srq2, android.R.layout.simple_spinner_item);
+        srq2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        srq2Spinner.setAdapter(srq2Adapter);
+
+        srq2Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==4){
+                    globalvariable.settemp_value(2);
+                }
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
+        Spinner srq3Spinner = (Spinner)findViewById(R.id.srq3);
+        ArrayAdapter srq3Adapter = ArrayAdapter.createFromResource(this,
+                R.array.srq3, android.R.layout.simple_spinner_item);
+        srq3Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        srq3Spinner.setAdapter(srq3Adapter);
+
+        srq3Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+                if(position==4){
+                    globalvariable.settemp_value(2);
+                }
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
+
+        Spinner srq4Spinner = (Spinner)findViewById(R.id.srq4);
+        ArrayAdapter srq4Adapter = ArrayAdapter.createFromResource(this,
+                R.array.srq4, android.R.layout.simple_spinner_item);
+        srq4Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        srq4Spinner.setAdapter(srq4Adapter);
+
+        srq4Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?>  parent, View view, int position, long id) {
+                globalvariable.settemp_value(position);
+            }
+            public void onNothingSelected(AdapterView<?>  parent) {
+
+            }
+        });
     }
 }
 /* 이게 선택으로 클릭하면 토스트메세지 나오는 버전

@@ -261,6 +261,78 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey14"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="14. 금이 아닌 장신구를 착용했을 때 피부 발진이 난 적이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/srq1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey15"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="15. 과거에 알레르기성 피부 발진으로 진단을 받은 적이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/srq2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey16"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="16. 가족 중에서 아토피 피부염, 알레르기로 진단받은 분이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/srq3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey17"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="17. 피부 관리용 제품을 사용하면 발진, 가려움증 등이 나타난 경험이 있습니까?" />
+                    ﻿<Spinner
+                        android:id="@+id/srq4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
             </LinearLayout>
             <Button
                 android:layout_width="match_parent"
@@ -378,6 +450,46 @@
                 android:layout_height="wrap_content"
                 android:text="다음"
                 android:layout_marginTop="296dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q13"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q14"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q15"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q16"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="273dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"

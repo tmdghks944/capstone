@@ -82,7 +82,7 @@ public class CameraActivity extends AppCompatActivity {
                     public void run(){
                         beginDownload();
                     }
-                },7000);
+                },10000);
                 mHandler.postDelayed(new Runnable(){
                     @Override
                     public void run(){

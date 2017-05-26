@@ -99,4 +99,33 @@
         <item>4. 얼굴, 가슴, 목, 양쪽 어깨에 많이 있었다</item>
         <item>5. 잘 모르겠다</item>
     </string-array>
+    <string-array name="srq1">
+        <item>선택</item>
+        <item>1. 전혀 없다</item>
+        <item>2. 가끔 있다</item>
+        <item>3. 자주 있다</item>
+        <item>4. 항상 있다</item>
+        <item>5. 잘 모르겠다</item>
+    </string-array>
+    <string-array name="srq2">
+        <item>선택</item>
+        <item>1. 전혀 없다</item>
+        <item>2. 있다.</item>
+        <item>3. 있으며 심각한 경우이다</item>
+        <item>4. 잘 모르겠다</item>
+    </string-array>
+    <string-array name="srq3">
+        <item>선택</item>
+        <item>1. 없다</item>
+        <item>2. 가족 중 한 명이 진단 받았다</item>
+        <item>3. 가족 중 몇 명이 진단 받았다</item>
+        <item>4. 잘 모르겠다</item>
+    </string-array>
+    <string-array name="srq4">
+        <item>선택</item>
+        <item>1. 전혀 없다</item>
+        <item>2. 거의 없다</item>
+        <item>3. 자주 있다</item>
+        <item>4. 항상 있다</item>
+    </string-array>
 </resources>
