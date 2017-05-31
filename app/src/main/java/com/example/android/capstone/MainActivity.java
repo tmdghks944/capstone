@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
-        Toast.makeText(MainActivity.this,String.valueOf(globalvariable.getsurvey_sr_value()),Toast.LENGTH_SHORT).show();
         mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
     }
     public void surveyChange(){

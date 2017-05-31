@@ -38,7 +38,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
                         android:textSize="20dp"
-                        android:text="1. 파우더를 사용하지 않고 기초 화장만 한 상태에서 2~3시간 후에 당신의 화장 상태는 어떻습니까?" />
+                        android:text="1. 파우더를 사용하지 않고 기초 화장만 한 상태에서 2~3시간 후에 당신의 화장 상태는 어떻습니까?\n(1/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq1"
                         android:layout_gravity="center"
@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="2. 비누 방울, 거품이 심하게 발생하는 비누를 사용하면 당신의 얼굴 피부는 어떻습니까?" />
+                        android:text="2. 비누 방울, 거품이 심하게 발생하는 비누를 사용하면 당신의 얼굴 피부는 어떻습니까?\n(2/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq2"
                         android:layout_gravity="center"
@@ -74,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="3. 보습제를 사용하지 않으면 얼굴 피부는 당기는 느낌입니까?" />
+                        android:text="3. 보습제를 사용하지 않으면 얼굴 피부는 당기는 느낌입니까?\n(3/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq3"
                         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="4. 얼굴에 모공이 있습니까?" />
+                        android:text="4. 얼굴에 모공이 있습니까?\n(4/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq4"
                         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="5. 얼굴의 T존에 유분기가 있습니까?" />
+                        android:text="5. 얼굴의 T존에 유분기가 있습니까?\n(5/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq5"
                         android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="6. 보습제를 바르고 2~3시간 이후에 양 볼은?" />
+                        android:text="6. 보습제를 바르고 2~3시간 이후에 양 볼은?\n(6/17)" />
                     ﻿<Spinner
                         android:id="@+id/odq6"
                         android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="7. 여드름 혹은 피부 속으로 파고 들어간 모발에 의해 짙은 갈색이나 검은 점이 생깁니까?" />
+                        android:text="7. 여드름 혹은 피부 속으로 파고 들어간 모발에 의해 짙은 갈색이나 검은 점이 생깁니까?\n(7/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq1"
                         android:layout_width="wrap_content"
@@ -164,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="8. 얼굴의 짙은 점은 햇빛에 의해 약화됩니까?" />
+                        android:text="8. 얼굴의 짙은 점은 햇빛에 의해 약화됩니까?\n(8/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq2"
                         android:layout_width="wrap_content"
@@ -182,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="9. 과거에 얼굴 기미로 진단받은 적이 있습니까?" />
+                        android:text="9. 과거에 얼굴 기미로 진단받은 적이 있습니까?\n(9/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq3"
                         android:layout_width="wrap_content"
@@ -200,7 +200,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="10. 얼굴, 가슴, 등, 혹은 양팔에 작은 갈색 점이 있거나, 있었던 적이 있습니까?" />
+                        android:text="10. 얼굴, 가슴, 등, 혹은 양팔에 작은 갈색 점이 있거나, 있었던 적이 있습니까?\n(10/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq4"
                         android:layout_width="wrap_content"
@@ -218,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="11. 며칠동안 계속해서 햇빛에 노출되면 어떤 일이 일어납니까?" />
+                        android:text="11. 며칠동안 계속해서 햇빛에 노출되면 어떤 일이 일어납니까?\n(11/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq5"
                         android:layout_width="wrap_content"
@@ -236,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="12. 햇볕에 나가면 주근깨가 생기나요?" />
+                        android:text="12. 햇볕에 나가면 주근깨가 생기나요?\n(12/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq6"
                         android:layout_width="wrap_content"
@@ -254,7 +254,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="13. 부모님 중의 어느 한분이라도 주근깨가 있나요?" />
+                        android:text="13. 부모님 중의 어느 한분이라도 주근깨가 있나요?\n(13/17)" />
                     ﻿<Spinner
                         android:id="@+id/pnq7"
                         android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="14. 금이 아닌 장신구를 착용했을 때 피부 발진이 난 적이 있습니까?" />
+                        android:text="14. 금이 아닌 장신구를 착용했을 때 피부 발진이 난 적이 있습니까?\n(14/17)" />
                     ﻿<Spinner
                         android:id="@+id/srq1"
                         android:layout_width="wrap_content"
@@ -290,7 +290,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="15. 과거에 알레르기성 피부 발진으로 진단을 받은 적이 있습니까?" />
+                        android:text="15. 과거에 알레르기성 피부 발진으로 진단을 받은 적이 있습니까?\n(15/17)" />
                     ﻿<Spinner
                         android:id="@+id/srq2"
                         android:layout_width="wrap_content"
@@ -308,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="16. 가족 중에서 아토피 피부염, 알레르기로 진단받은 분이 있습니까?" />
+                        android:text="16. 가족 중에서 아토피 피부염, 알레르기로 진단받은 분이 있습니까?\n(16/17)" />
                     ﻿<Spinner
                         android:id="@+id/srq3"
                         android:layout_width="wrap_content"
@@ -326,19 +326,37 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp"
                         android:layout_marginBottom="30dp"
-                        android:text="17. 피부 관리용 제품을 사용하면 발진, 가려움증 등이 나타난 경험이 있습니까?" />
+                        android:text="17. 피부 관리용 제품을 사용하면 발진, 가려움증 등이 나타난 경험이 있습니까?\n(17/17)" />
                     ﻿<Spinner
                         android:id="@+id/srq4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/survey18"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="나이를 입력해주세요."/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userageinput"
+                        android:inputType="number"
+                        android:layout_marginBottom="30dp" />
+                </LinearLayout>
             </LinearLayout>
             <Button
                 android:layout_width="match_parent"
                 android:id="@+id/q1"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="227dp"
                 android:layout_gravity="bottom|center_horizontal"
                 android:text="다음"
                 android:visibility="visible"
@@ -348,7 +366,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/q2"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="227dp"
                 android:text="다음"
                 android:onClick="clickBtn"
                 android:visibility="gone"
@@ -358,7 +376,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/q3"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:text="다음"
                 android:visibility="gone"
                 android:onClick="clickBtn"
@@ -370,7 +388,7 @@
                 android:layout_height="wrap_content"
                 android:text="다음"
                 android:visibility="gone"
-                android:layout_marginTop="296dp"
+                android:layout_marginTop="273dp"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
                 android:layout_gravity="bottom|center_horizontal"/>
@@ -379,7 +397,7 @@
                 android:id="@+id/q5"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="296dp"
+                android:layout_marginTop="273dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -389,7 +407,7 @@
                 android:id="@+id/q6"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -399,7 +417,7 @@
                 android:id="@+id/q7"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="227dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -409,7 +427,7 @@
                 android:id="@+id/q8"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -419,7 +437,7 @@
                 android:id="@+id/q9"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -429,7 +447,7 @@
                 android:id="@+id/q10"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -439,7 +457,7 @@
                 android:id="@+id/q11"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -449,7 +467,7 @@
                 android:id="@+id/q12"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="296dp"
+                android:layout_marginTop="273dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -459,7 +477,7 @@
                 android:id="@+id/q13"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -469,7 +487,7 @@
                 android:id="@+id/q14"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -479,7 +497,7 @@
                 android:id="@+id/q15"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -489,7 +507,17 @@
                 android:id="@+id/q16"
                 android:layout_height="wrap_content"
                 android:text="다음"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="250dp"
+                android:visibility="gone"
+                android:onClick="clickBtn"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/q17"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:layout_marginTop="250dp"
                 android:visibility="gone"
                 android:onClick="clickBtn"
                 android:theme="@style/ThemeOverlay.MyDarkButton"
@@ -498,7 +526,7 @@
                 android:id="@+id/gotoMain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="273dp"
+                android:layout_marginTop="275dp"
                 android:text="시작하기"
                 android:visibility="gone"
                 android:onClick="clickBtn"

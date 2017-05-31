@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class SurveyActivity extends AppCompatActivity{
     LinearLayout question15;
     LinearLayout question16;
     LinearLayout question17;
+    LinearLayout question18;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -49,6 +51,7 @@ public class SurveyActivity extends AppCompatActivity{
     Button btn14;
     Button btn15;
     Button btn16;
+    Button btn17;
     Button gotomainbtn;
 
     @Override
@@ -71,12 +74,18 @@ public class SurveyActivity extends AppCompatActivity{
 
     public void clickBtn(View view) {
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        EditText editText = (EditText)findViewById(R.id.userageinput);
         switch (view.getId()) {
-            case R.id.gotoMain://이제 이게 sr측정하는걸로바뀐다.
-                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
-                globalvariable.setsurveydone(true);
-                Intent intent = new Intent(this,MainActivity.class);
-                startActivity(intent);
+            case R.id.gotoMain://이제 이게 나이측정하는걸로바뀐다.
+                if(editText.getText().toString().getBytes().length<=0){
+                    Toast.makeText(SurveyActivity.this,"나이를 입력해주세요",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    globalvariable.setuser_age(Integer.parseInt(editText.getText().toString()));
+                    globalvariable.setsurveydone(true);
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.q1:
                 globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
@@ -188,6 +197,13 @@ public class SurveyActivity extends AppCompatActivity{
                 question16.setVisibility(View.GONE);
                 btn16.setVisibility(View.GONE);
                 question17.setVisibility(View.VISIBLE);
+                btn17.setVisibility(View.VISIBLE);
+                break;
+            case R.id.q17:
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question17.setVisibility(View.GONE);
+                btn17.setVisibility(View.GONE);
+                question18.setVisibility(View.VISIBLE);
                 gotomainbtn.setVisibility(View.VISIBLE);
                 break;
         }
@@ -213,6 +229,7 @@ public class SurveyActivity extends AppCompatActivity{
         question15 = (LinearLayout)findViewById(R.id.survey15);
         question16 = (LinearLayout)findViewById(R.id.survey16);
         question17 = (LinearLayout)findViewById(R.id.survey17);
+        question18 = (LinearLayout)findViewById(R.id.survey18);
 
 
 
@@ -232,6 +249,7 @@ public class SurveyActivity extends AppCompatActivity{
         btn14 = (Button)findViewById(R.id.q14);
         btn15 = (Button)findViewById(R.id.q15);
         btn16 = (Button)findViewById(R.id.q16);
+        btn17 = (Button)findViewById(R.id.q17);
         gotomainbtn = (Button)findViewById(R.id.gotoMain);
 
 
