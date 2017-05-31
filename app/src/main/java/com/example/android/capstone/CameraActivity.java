@@ -71,10 +71,12 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
+            GlobalVariable globalvariable = (GlobalVariable)getApplication();
             Uri uri = data.getData();
             try {
                 String path = getPath(uri);
                 beginUpload(path);
+                globalvariable.setcameradone(true);
                 showMessage();
                 mHandler = new Handler();
                 mHandler.postDelayed(new Runnable(){

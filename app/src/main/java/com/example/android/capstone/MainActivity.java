@@ -25,12 +25,6 @@ public class MainActivity extends AppCompatActivity {
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
         mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
     }
-    public void surveyChange(){
-        question1.setVisibility(View.VISIBLE);
-        btn1.setVisibility(View.VISIBLE);
-        question17.setVisibility(View.GONE);
-        gotomainbtn.setVisibility(View.GONE);
-    }
     public void clickMain(View view) {
         switch (view.getId()) {
             case R.id.main1:

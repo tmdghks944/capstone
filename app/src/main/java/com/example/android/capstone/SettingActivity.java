@@ -37,26 +37,29 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);            //다시 조사하기 버튼도 만들자.
         textView = (TextView)findViewById(R.id.myTypeView);
         warningView = (TextView)findViewById(R.id.warningView);
-        readResultFile();
-
-        if(globalvariable.getwt_value()==-1){//인식에 실패하면
-            ActionBar actionBar = this.getSupportActionBar();
-            // Set the action bar back button to look like an up button
-            if (actionBar != null) {
-                actionBar.setDisplayHomeAsUpEnabled(true);
-            }
-            textView.setText("얼굴 인식에 실패하였습니다. 사진촬영을 다시 진행해주세요.");
+        if(globalvariable.getcameradone()==false){
+            textView.setText("피부분석이 아직 이루어지지 않았습니다. 사진촬영을 진행해 주세요.");
         }
-        else{//인식에 성공했으면.
-            myType = getUserType();
-            settypenum(myType);
-            warningmap = globalvariable.getwarn();
-            textView.setText("당신의 피부 타입은 "+ myType + "입니다");
-            warningView.setText("비추천 성분 : " + getWarningIngredient(globalvariable.gettype_value()));
-            ActionBar actionBar = this.getSupportActionBar();
-            // Set the action bar back button to look like an up button
-            if (actionBar != null) {
-                actionBar.setDisplayHomeAsUpEnabled(true);
+        else {
+            readResultFile();
+            if (globalvariable.getwt_value() == -1) {//인식에 실패하면
+                ActionBar actionBar = this.getSupportActionBar();
+                // Set the action bar back button to look like an up button
+                if (actionBar != null) {
+                    actionBar.setDisplayHomeAsUpEnabled(true);
+                }
+                textView.setText("얼굴 인식에 실패하였습니다. 사진촬영을 다시 진행해주세요.");
+            } else {//인식에 성공했으면.
+                myType = getUserType();
+                settypenum(myType);
+                warningmap = globalvariable.getwarn();
+                textView.setText("당신의 피부 타입은 " + myType + "입니다");
+                warningView.setText("비추천 성분 : " + getWarningIngredient(globalvariable.gettype_value()));
+                ActionBar actionBar = this.getSupportActionBar();
+                // Set the action bar back button to look like an up button
+                if (actionBar != null) {
+                    actionBar.setDisplayHomeAsUpEnabled(true);
+                }
             }
         }
     }
@@ -120,69 +123,74 @@ public class SettingActivity extends AppCompatActivity {
         else
             type+='O';
 
-        if(globalvariable.getsr_value()==1)//sr이 0이더라도 알레르기가 있으면 s로 판단.
-            type+='S';
+        if(globalvariable.getsr_value()==0 && globalvariable.getsurvey_sr_value()<=8 )//sr이 0이더라도 알레르기가 있으면 s로 판단.
+            type+='R';
         else
             type+='R';
+
+
+
+
+
 
         if(globalvariable.getpn_value()<=15)
             type+='N';
         else
             type+='P';
 
-        //나이에따른 wt
-//        if(globalvariable.getuser_age()<=29){
-//            if(globalvariable.getwt_value()>=24){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-//        else if(globalvariable.getuser_age()<=39){
-//            if(globalvariable.getwt_value()>=38){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-//        else if(globalvariable.getuser_age()<=49){
-//            if(globalvariable.getwt_value()>=51){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-//        else if(globalvariable.getuser_age()<=59){
-//            if(globalvariable.getwt_value()>=62){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-//        else if(globalvariable.getuser_age()<=69){
-//            if(globalvariable.getwt_value()>=68){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-//        else{
-//            if(globalvariable.getwt_value()>=74){
-//                type+='W';
-//            }
-//            else{
-//                type+='T';
-//            }
-//        }
-        if(globalvariable.getwt_value()>=1)//나이따라.
-            type+='W';
-        else
-            type+='T';
+        if(globalvariable.getuser_age()<=29){
+            if(globalvariable.getwt_value()>=24){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else if(globalvariable.getuser_age()<=39){
+            if(globalvariable.getwt_value()>=38){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else if(globalvariable.getuser_age()<=49){
+            if(globalvariable.getwt_value()>=51){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else if(globalvariable.getuser_age()<=59){
+            if(globalvariable.getwt_value()>=62){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else if(globalvariable.getuser_age()<=69){
+            if(globalvariable.getwt_value()>=68){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else{
+            if(globalvariable.getwt_value()>=74){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+
+//        if(globalvariable.getwt_value()>=1)//나이따라.
+//            type+='W';
+//        else
+//            type+='T';
 
         return type;
     }

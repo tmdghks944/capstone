@@ -32,30 +32,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SurveyActivity"
-            android:parentActivityName=".LoginActivity" />
+            android:name=".SurveyActivity" />
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".SurveyActivity">
+            android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CameraActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".CameraActivity" />
         <activity
-            android:name=".Menu1Activity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Menu1Activity" />
         <activity
-            android:name=".Menu2Activity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Menu2Activity" />
         <activity
-            android:name=".FrontCamera"
-            android:parentActivityName=".CameraActivity" />
+            android:name=".FrontCamera" />
         <activity
-            android:name=".SendingActivity"
-            android:parentActivityName=".CameraActivity" />
+            android:name=".SendingActivity" />
 
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
@@ -63,21 +56,16 @@
 
         <activity
             android:name=".SettingActivity"
-            android:label="마이페이지"
-            android:parentActivityName=".MainActivity">
+            android:label="마이페이지" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".ResultActivity"
-            android:parentActivityName=".Menu1Activity" />
+            android:name=".ResultActivity" />
         <activity
-            android:name=".FirebaseActivity"
-            android:parentActivityName=".MainActivity" />
-
+            android:name=".FirebaseActivity" />
         <activity android:name=".CosmeticActivity">
-
         </activity>
     </application>
 

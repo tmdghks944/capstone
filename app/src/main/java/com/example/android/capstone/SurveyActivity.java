@@ -83,6 +83,7 @@ public class SurveyActivity extends AppCompatActivity{
                 else {
                     globalvariable.setuser_age(Integer.parseInt(editText.getText().toString()));
                     globalvariable.setsurveydone(true);
+                    SurveyActivity.this.finish();
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                 }

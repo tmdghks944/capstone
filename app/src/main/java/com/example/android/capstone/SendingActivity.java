@@ -53,8 +53,10 @@ public class SendingActivity extends AppCompatActivity {
     public void trasferImg(View view){
         beginUpload(image_path);
         showMessage();
-        mHandler = new Handler();
+        GlobalVariable globalvariable = (GlobalVariable)getApplication();
 
+        mHandler = new Handler();
+        globalvariable.setcameradone(true);
         mHandler.postDelayed(new Runnable(){
             @Override
             public void run(){
