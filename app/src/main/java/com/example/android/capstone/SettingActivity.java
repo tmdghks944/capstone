@@ -6,9 +6,13 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,14 +33,16 @@ public class SettingActivity extends AppCompatActivity {
     TextView textView;
     TextView warningView;
     ImageView imageView;
+    Button button;
     private HashMap<String,Integer> warningmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
-        setContentView(R.layout.activity_setting);            //다시 조사하기 버튼도 만들자.
+        setContentView(R.layout.activity_setting);
         textView = (TextView)findViewById(R.id.myTypeView);
         warningView = (TextView)findViewById(R.id.warningView);
+
         if(globalvariable.getcameradone()==false){
             textView.setText("피부분석이 아직 이루어지지 않았습니다. 사진촬영을 진행해 주세요.");
         }
