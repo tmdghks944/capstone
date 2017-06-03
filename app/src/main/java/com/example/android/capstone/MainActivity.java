@@ -7,10 +7,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.SearchView;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout mainLinear;
@@ -18,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout question17;
     Button btn1;
     Button gotomainbtn;
+    SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
         mainLinear = (LinearLayout) findViewById(R.id.mainLinear);
     }
@@ -56,6 +61,31 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.skin_menu, menu);
+        final GlobalVariable globalvariable = (GlobalVariable)getApplication();
+        final Intent intent = new Intent(this, ResultActivity.class);
+
+        MenuItem myActionMenuItem = menu.findItem( R.id.search_cosmetic);
+        searchView = (SearchView) myActionMenuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Toast like print
+                globalvariable.setdetailname(query);
+                startActivity(intent);
+
+                if( ! searchView.isIconified()) {
+                    searchView.setIconified(true);
+                }
+                //myActionMenuItem.collapseActionView();
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                // UserFeedback.show( "SearchOnQueryTextChanged: " + s);
+                return false;
+            }
+        });
         return true;
     }
 
@@ -65,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Intent startSettingsActivity = new Intent(this, SettingActivity.class);
             startActivity(startSettingsActivity);
+            return true;
+        }
+        else if(id==R.id.search_cosmetic){
             return true;
         }
         return super.onOptionsItemSelected(item);

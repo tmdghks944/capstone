@@ -60,7 +60,6 @@ public class ResultActivity extends AppCompatActivity {
         final String[] targetid = {new String()};
         String targetname = globalvariable.getdetailname();
         textView = (TextView)findViewById(R.id.Detailtext);
-        textView.setText(targetname + "의 세부성분입니다.");
         detailRecyclerView.addItemDecoration(new DividerItemDecoration(ResultActivity.this,
                 DividerItemDecoration.VERTICAL));
 
@@ -83,11 +82,14 @@ public class ResultActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot targetcosmetic : dataSnapshot.getChildren()) {
+
                         Cosmetic newcosmetic = targetcosmetic.getValue(Cosmetic.class);
+                        textView.setText(newcosmetic.getCosmeticName() + "의 세부성분입니다.");
                         Picasso.with(ResultActivity.this)
                                 .load(newcosmetic.getCosmeticAddress())
                                 .into(imageView);
                         targetid[0] = newcosmetic.getCosmeticId();
+
                         Query query2 = reference.child("ingredients").child(targetid[0]);
                         query2.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -112,16 +114,15 @@ public class ResultActivity extends AppCompatActivity {
                         });
                     }
                 }
+                else{
+                    textView.setText("'" + globalvariable.getdetailname() + "' 에 해당하는 제품을 찾을 수 없습니다.");
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-        //해당하는 아이디를 찾았으면 그 화장품의 성분을 나열.
-
-
-
     }
 
     public void addToWaitlist(String name, int sum) {
