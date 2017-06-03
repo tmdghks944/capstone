@@ -10,7 +10,6 @@ public class Ingredient {
     private int ingredientDanger;
 
     public Ingredient() {
-
     }
 
     public Ingredient(String ingredientId, String ingredientName, int ingredientDanger) {

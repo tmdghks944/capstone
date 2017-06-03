@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import android.database.Cursor;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import com.example.android.capstone.data.DetaillistContract;
 import com.example.android.capstone.data.DetaillistDbHelper;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -35,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
     private SQLiteDatabase mDb1;
     private TextView textView;
     private HashMap<String,Integer> warningmap;
-
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class ResultActivity extends AppCompatActivity {
         final GlobalVariable globalvariable = (GlobalVariable)getApplication();
         warningmap = globalvariable.getwarn();
         RecyclerView detailRecyclerView;
-
+        imageView = (ImageView)findViewById(R.id.detailCosmeticImageView);
         detailRecyclerView = (RecyclerView) this.findViewById(R.id.all_details_list_view);
         detailRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         DetaillistDbHelper dbHelper = new DetaillistDbHelper(this);
@@ -82,6 +84,9 @@ public class ResultActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot targetcosmetic : dataSnapshot.getChildren()) {
                         Cosmetic newcosmetic = targetcosmetic.getValue(Cosmetic.class);
+                        Picasso.with(ResultActivity.this)
+                                .load(newcosmetic.getCosmeticAddress())
+                                .into(imageView);
                         targetid[0] = newcosmetic.getCosmeticId();
                         Query query2 = reference.child("ingredients").child(targetid[0]);
                         query2.addListenerForSingleValueEvent(new ValueEventListener() {

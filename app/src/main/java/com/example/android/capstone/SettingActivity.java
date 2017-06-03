@@ -126,12 +126,7 @@ public class SettingActivity extends AppCompatActivity {
         if(globalvariable.getsr_value()==0 && globalvariable.getsurvey_sr_value()<=8 )//sr이 0이더라도 알레르기가 있으면 s로 판단.
             type+='R';
         else
-            type+='R';
-
-
-
-
-
+            type+='S';
 
         if(globalvariable.getpn_value()<=15)
             type+='N';

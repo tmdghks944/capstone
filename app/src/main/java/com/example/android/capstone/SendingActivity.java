@@ -62,7 +62,7 @@ public class SendingActivity extends AppCompatActivity {
             public void run(){
                 beginDownload();
             }
-        },10000);
+        },13000);
 
         mHandler.postDelayed(new Runnable(){
             @Override
@@ -70,7 +70,7 @@ public class SendingActivity extends AppCompatActivity {
                 Intent intent = new Intent(SendingActivity.this,SettingActivity.class);
                 startActivity(intent);
             }
-        },15000);
+        },16000);
     }
 
     private void beginUpload(String filePath) {
@@ -128,19 +128,19 @@ public class SendingActivity extends AppCompatActivity {
                                                     e.printStackTrace();
                                                 }
                                             }
-                                        }, 4000);
+                                        }, 6000);
                                     }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }, 4000);
+                        }, 6000);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }, 4000);
+        }, 5000);
     }
 
 }
