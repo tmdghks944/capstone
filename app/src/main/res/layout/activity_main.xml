@@ -21,33 +21,34 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/myTypeView"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center"
+                android:textSize="30dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/main1"
                     android:layout_width="0dp"
-                    android:layout_height="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="clickMain"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/cosmetics" />
-
-                    <TextView
-                        android:id="@+id/humidity"
+                    <Button
+                        android:id="@+id/MainBtn1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:gravity="center|bottom"
-                        android:paddingTop="7dp"
-                        android:text="스킨로션" />
+                        android:text="추천 화장품"
+                        android:onClick="clickMainBtn1"
+                        android:theme="@style/ThemeOverlay.MyDarkButton"/>
                 </LinearLayout>
 
                 <android.support.v4.widget.Space
@@ -57,24 +58,18 @@
                 <LinearLayout
                     android:id="@+id/main2"
                     android:layout_width="0dp"
-                    android:layout_height="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="clickMain"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/nailpolish" />
-
-                    <TextView
-                        android:id="@+id/sunshine"
+                    <Button
+                        android:id="@+id/MainBtn2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:gravity="center|bottom"
-                        android:text="색조화장품" />
+                        android:text="비추천 성분"
+                        android:onClick="clickMainBtn2"
+                        android:theme="@style/ThemeOverlay.MyDarkButton"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -99,7 +94,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:src="@drawable/photocamera" />
+                        android:src="@drawable/photocamera2" />
 
                     <TextView
                         android:id="@+id/temperature"
@@ -126,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:src="@drawable/upload" />
+                        android:src="@drawable/nailpolish2" />
 
                     <TextView
                         android:id="@+id/givewater"
@@ -134,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:gravity="center|bottom"
-                        android:text="업로드 하기" />
+                        android:text="제품 리스트" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -142,6 +137,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+                <!--실제로 보여줄때는 VISIBILITY GONE으로 바꿔줘야한다!!!!!!!!!-->
+
+                <LinearLayout
+                    android:id="@+id/main5"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:onClick="clickMain"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/upload" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center|bottom"
+                        android:text="DB 업로드" />
+                </LinearLayout>
+
+                <android.support.v4.widget.Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

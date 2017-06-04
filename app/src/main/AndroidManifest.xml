@@ -56,11 +56,7 @@
 
         <activity
             android:name=".SettingActivity"
-            android:label="마이페이지" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+            android:label="마이페이지" />
         <activity
             android:name=".ResultActivity" />
         <activity

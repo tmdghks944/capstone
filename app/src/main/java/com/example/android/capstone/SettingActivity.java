@@ -49,23 +49,14 @@ public class SettingActivity extends AppCompatActivity {
         else {
             readResultFile();
             if (globalvariable.getwt_value() == -1) {//인식에 실패하면
-                ActionBar actionBar = this.getSupportActionBar();
-                // Set the action bar back button to look like an up button
-                if (actionBar != null) {
-                    actionBar.setDisplayHomeAsUpEnabled(true);
-                }
                 textView.setText("얼굴 인식에 실패하였습니다. 사진촬영을 다시 진행해주세요.");
             } else {//인식에 성공했으면.
                 myType = getUserType();
                 settypenum(myType);
+                globalvariable.settype_name(myType);
                 warningmap = globalvariable.getwarn();
-                textView.setText("당신의 피부 타입은 " + myType + "입니다");
+                textView.setText(globalvariable.getusername() + "님의 피부 타입은 " + myType + "입니다");
                 warningView.setText("비추천 성분 : " + getWarningIngredient(globalvariable.gettype_value()));
-                ActionBar actionBar = this.getSupportActionBar();
-                // Set the action bar back button to look like an up button
-                if (actionBar != null) {
-                    actionBar.setDisplayHomeAsUpEnabled(true);
-                }
             }
         }
     }
@@ -74,8 +65,12 @@ public class SettingActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.typeInitialize:
                 GlobalVariable globalvariable = (GlobalVariable)getApplication();
+                Toast.makeText(SettingActivity.this,"피부 정보가 초기화 되었습니다.",Toast.LENGTH_SHORT).show();
                 globalvariable.setsurveydone(false);
                 globalvariable.initializewarn();
+                Intent intent = new Intent(SettingActivity.this,SurveyActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 break;
         }
     }
@@ -140,7 +135,7 @@ public class SettingActivity extends AppCompatActivity {
             type+='P';
 
         if(globalvariable.getuser_age()<=29){
-            if(globalvariable.getwt_value()>=24){
+            if(globalvariable.getwt_value()>=30){
                 type+='W';
             }
             else{
@@ -148,7 +143,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         }
         else if(globalvariable.getuser_age()<=39){
-            if(globalvariable.getwt_value()>=38){
+            if(globalvariable.getwt_value()>=44){
                 type+='W';
             }
             else{
@@ -156,7 +151,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         }
         else if(globalvariable.getuser_age()<=49){
-            if(globalvariable.getwt_value()>=51){
+            if(globalvariable.getwt_value()>=57){
                 type+='W';
             }
             else{
@@ -164,14 +159,6 @@ public class SettingActivity extends AppCompatActivity {
             }
         }
         else if(globalvariable.getuser_age()<=59){
-            if(globalvariable.getwt_value()>=62){
-                type+='W';
-            }
-            else{
-                type+='T';
-            }
-        }
-        else if(globalvariable.getuser_age()<=69){
             if(globalvariable.getwt_value()>=68){
                 type+='W';
             }
@@ -179,8 +166,16 @@ public class SettingActivity extends AppCompatActivity {
                 type+='T';
             }
         }
-        else{
+        else if(globalvariable.getuser_age()<=69){
             if(globalvariable.getwt_value()>=74){
+                type+='W';
+            }
+            else{
+                type+='T';
+            }
+        }
+        else{
+            if(globalvariable.getwt_value()>=80){
                 type+='W';
             }
             else{

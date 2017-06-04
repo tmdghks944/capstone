@@ -54,15 +54,13 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
         holder.nameTextView.setText(name);
         // Display the party count
         holder.partySizeTextView.setText(String.valueOf(partySize));
-
-        if(partySize>=0 && partySize<=2){
+        //이게 menu1info에 따라서도 달라져야한다 true일 때는 추천화장품으로 그대로 가고 false이면 하얀색으로 가야함.
+        if(GlobalVariable.menu1info==true) {
             holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle);
         }
-        else if(partySize>=3 && partySize<=6){
-            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle1);
-        }
         else{
-            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle2);
+            holder.partySizeTextView.setBackgroundResource(R.drawable.coscircle1);
+            holder.partySizeTextView.setTextColor(0);
         }
 
         holder.itemView.setTag(id);

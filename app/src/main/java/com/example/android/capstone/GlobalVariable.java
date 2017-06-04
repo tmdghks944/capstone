@@ -14,16 +14,19 @@ public class GlobalVariable extends Application {
     private int wt_value;      //주름 수치
     private int tone_value;
     private int type_value;
+    private String type_name;
     private int user_age;
     private boolean surveydone;
     private boolean cameradone;
     private String detailid;
     private String detailname;
     private boolean highlight;
+    public static boolean menu1info=true;//추천화장품으로 들어가느냐 (true) 제품리스트로 들어가느냐(false)
 
     private HashMap<String,Integer> warn = new HashMap<String,Integer>();
 
     public String getusername() { return user_name; }
+    public String gettype_name(){return type_name;}
     public void setusername(String globalString)
     {
         this.user_name = globalString;
@@ -59,7 +62,6 @@ public class GlobalVariable extends Application {
         warn.put(str,new Integer(val));
     }
     public void setuser_age(int user_age){this.user_age=user_age;}
-
     public void settemp_value(int temp_value){ this.temp_value=temp_value; }
     public void setod_value(int od_value){ this.od_value=od_value;}
     public void setpn_value(int pn_value){ this.pn_value=pn_value;}
@@ -68,7 +70,7 @@ public class GlobalVariable extends Application {
     public void setwt_value(int wt_value){ this.wt_value=wt_value;}
     public void settone_value(int tone_value){this.tone_value=tone_value;}
     public void settype_value(int type_value){this.type_value=type_value;}
-
+    public void settype_name(String type_name){this.type_name=type_name;}
     public void setsurveydone(boolean surveydone){ this.surveydone = surveydone; }
     public void setcameradone(boolean cameradone){ this.cameradone = cameradone; }
     public void sethighright(boolean highlight){this.highlight=highlight;}
