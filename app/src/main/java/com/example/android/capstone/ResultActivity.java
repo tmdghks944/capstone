@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,6 +38,7 @@ public class ResultActivity extends AppCompatActivity {
     private DetailListAdapter mAdapter;
     private SQLiteDatabase mDb1;
     private TextView textView;
+    private TextView purchaseTextView;
     private HashMap<String,Integer> warningmap;
     ImageView imageView;
     @Override
@@ -47,6 +50,7 @@ public class ResultActivity extends AppCompatActivity {
         RecyclerView detailRecyclerView;
         imageView = (ImageView)findViewById(R.id.detailCosmeticImageView);
         detailRecyclerView = (RecyclerView) this.findViewById(R.id.all_details_list_view);
+        purchaseTextView = (TextView)findViewById(R.id.PurchaseText);
         detailRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         DetaillistDbHelper dbHelper = new DetaillistDbHelper(this);
 
@@ -84,7 +88,10 @@ public class ResultActivity extends AppCompatActivity {
                     for (DataSnapshot targetcosmetic : dataSnapshot.getChildren()) {
 
                         Cosmetic newcosmetic = targetcosmetic.getValue(Cosmetic.class);
+
                         textView.setText(newcosmetic.getCosmeticName() + "의 세부성분입니다.");
+                        purchaseTextView.setText(Html.fromHtml("<a href=" + getPurchaseTextView(newcosmetic.getCosmeticName()) +"> 구매하러 가기"));
+                        purchaseTextView.setMovementMethod(LinkMovementMethod.getInstance());
                         Picasso.with(ResultActivity.this)
                                 .load(newcosmetic.getCosmeticAddress())
                                 .into(imageView);
@@ -97,12 +104,6 @@ public class ResultActivity extends AppCompatActivity {
                                 if (dataSnapshot.exists()) {
                                     for (DataSnapshot allingredients : dataSnapshot.getChildren()) {
                                         Ingredient newingredient = allingredients.getValue(Ingredient.class);
-                                        if(warningmap.containsKey(newingredient.getIngredientName())){//해당 성분이 유해하면 하이라이팅
-                                            globalvariable.sethighright(true);
-                                        }
-                                        else{
-                                            globalvariable.sethighright(false);
-                                        }
                                         addToWaitlist(newingredient.getIngredientName(),newingredient.getIngredientDanger());
                                     }
                                 }
@@ -154,4 +155,23 @@ public class ResultActivity extends AppCompatActivity {
         return mDb1.delete(DetaillistContract.DetaillistEntry.TABLE_NAME, DetaillistContract.DetaillistEntry._ID + "=" + id, null) > 0;
     }
 
+    //TODO : 화장품 넣을 때 마다 링크 넣어야 함.
+    public String getPurchaseTextView(String cosmeticname){
+        String str=null;
+        switch (cosmeticname){
+            case "이니스프리 포레스트 올인원":
+                str = "https://www.innisfree.com";
+                break;
+            case "아이오페 스킨":
+                str = "https://www.iope.com";
+                break;
+            case "SK-II 피테라 에센스":
+                str =  "https://www.sk2.co.kr";
+                break;
+            case "아이오페 올인원 스킨":
+                str = "https://www.iope.com";
+                break;
+        }
+        return str;
+    }
 }
