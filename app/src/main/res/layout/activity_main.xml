@@ -140,7 +140,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:orientation="horizontal">
                 <!-- TODO : 실제로 보여줄때는 VISIBILITY GONE으로 바꿔줘야한다!!!!!!!!!-->
 

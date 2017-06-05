@@ -81,11 +81,6 @@ public class SendingActivity extends AppCompatActivity {
         }
         File file = new File(filePath);
         TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file.getName(), file);
-
-        //올린 이미지 보여주기 조금있다가 얼굴인식된 사진으로 보여줘야함.
-      //Bitmap myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-      //ImageView uploadimage = (ImageView)findViewById(R.id.uploadImage);
-      //uploadimage.setImageBitmap(myBitmap);
     }
 
     private void beginDownload() {
