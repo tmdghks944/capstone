@@ -171,6 +171,12 @@ public class ResultActivity extends AppCompatActivity {
             case "아이오페 올인원 스킨":
                 str = "https://www.iope.com";
                 break;
+            case "리얼 모이스트 24 핸드크림":
+                str = "http://missha.beautynet.co.kr/main.do";
+                break;
+            case "멜팅 버터 핸드크림":
+                str = "http://missha.beautynet.co.kr/main.do";
+                break;
         }
         return str;
     }

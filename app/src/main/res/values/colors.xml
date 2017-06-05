@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#000000</color>
-    <color name="Lowhazard">#00FF00</color>
-    <color name="Midhazard">#F9690E</color>
-    <color name="Highhazard">#FF0000</color>
+    <color name="Lowhazard">#26C281</color>
+    <color name="Midhazard">#E9D460</color>
+    <color name="Highhazard">#D64541</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blue_grey_500">#000000</color>

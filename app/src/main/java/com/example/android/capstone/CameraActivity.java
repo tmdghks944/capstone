@@ -84,14 +84,14 @@ public class CameraActivity extends AppCompatActivity {
                     public void run(){
                         beginDownload();
                     }
-                },13000);
+                },15000);
                 mHandler.postDelayed(new Runnable(){
                     @Override
                     public void run(){
                         Intent intent = new Intent(CameraActivity.this,SettingActivity.class);
                         startActivity(intent);
                     }
-                },16000);
+                },18000);
             } catch (URISyntaxException e) {
                 Toast.makeText(this,
                         "Unable to get the file from the given URI.  See error log for details",
@@ -181,13 +181,13 @@ public class CameraActivity extends AppCompatActivity {
                                                     e.printStackTrace();
                                                 }
                                             }
-                                        }, 6000);
+                                        }, 7000);
                                     }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }, 6000);
+                        }, 7000);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

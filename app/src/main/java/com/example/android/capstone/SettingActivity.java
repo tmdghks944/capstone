@@ -245,36 +245,37 @@ public class SettingActivity extends AppCompatActivity {
     public String getWarningIngredient(int num){
         String str="";
         GlobalVariable globalvariable = (GlobalVariable)getApplication();
-        if(num==1){
-            str += "시나몬 오일, 이소프로필 미리스테이트, 코코아 버터, 페퍼민트 오일, 코코넛 오일";
+        if(num==1){//OSPT
+            str += "시나몬 오일, 이소프로필 미리스테이트, 코코아 버터, 페퍼민트 오일, 코코넛 오일, 소디움라우릴설페이트";
             globalvariable.pushwarn("시나몬오일",1);
             globalvariable.pushwarn("이소프로필미리스테이트",1);
             globalvariable.pushwarn("코코아버터",1);
             globalvariable.pushwarn("페퍼민트오일",1);
             globalvariable.pushwarn("코코넛오일",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("소디움라우릴설페이트",2);
         }
-        else if(num==2){
-            str += "부틸 스테아레이트, 미리스틸 프로페오네이트, 이소 스테아릴, 이소 스테아레이트, 시나몬 오일";
+        else if(num==2){//OSPT
+            str += "부틸 스테아레이트, 미리스틸 프로페오네이트, 이소 스테아릴, 이소 스테아레이트, 시나몬 오일, 코코넛 오일, 옥틸 스테아레이트, 페퍼민트 오일";
             globalvariable.pushwarn("부틸스테아레이트",1);
+            globalvariable.pushwarn("미리스틸프로페오네이트",1);
             globalvariable.pushwarn("이소스테아릴",1);
             globalvariable.pushwarn("이소스테아레이트",1);
             globalvariable.pushwarn("시나몬오일",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("코코넛오일",1);
+            globalvariable.pushwarn("옥틸스테아레이트",1);
+            globalvariable.pushwarn("페퍼민트오일",1);
         }
-        else if(num==3){
+        else if(num==3){//OSNW
             str += "아세틱 애씨드, 발삼, 벤조익 애씨드, 시나믹애씨드, 파라벤, 멘톨, 락틱애씨드";
             globalvariable.pushwarn("아세틱애씨드",1);
             globalvariable.pushwarn("발삼",2);
-            globalvariable.pushwarn("이소스테아릴",1);
-            globalvariable.pushwarn("이소스테아레이트",1);
-            globalvariable.pushwarn("시나몬오일",1);
+            globalvariable.pushwarn("벤조익애씨드",1);
+            globalvariable.pushwarn("시나믹애씨드",1);
             globalvariable.pushwarn("파라벤",7);
             globalvariable.pushwarn("멘톨",1);
             globalvariable.pushwarn("락틱애씨드",4);
-            globalvariable.pushwarn("정제수",1);
         }
-        else if(num==4){
+        else if(num==4){//OSNT
             str += "아세틱애씨드, 코코넛 오일, 알란토인, 알파-리포익애씨드, 발삼, 캠퍼, 페닐벤지미다졸";
             globalvariable.pushwarn("아세틱애씨드",1);
             globalvariable.pushwarn("코코넛오일",1);
@@ -283,42 +284,40 @@ public class SettingActivity extends AppCompatActivity {
             globalvariable.pushwarn("발삼",2);
             globalvariable.pushwarn("캠퍼",2);
             globalvariable.pushwarn("페닐벤지미다졸",3);
-            globalvariable.pushwarn("정제수",1);
         }
-        else if(num==5){
-            str += "콩추출물, 야생암추출물, 레드클로버추출물, 체이스트리베리추출물, 바세린";
+        else if(num==5){//ORPW
+            str += "콩추출물, 야생암추출물, 레드클로버추출물, 체이스트리베리추출물, 바세린, 미네랄 오일, 코코넛 오일";
             globalvariable.pushwarn("콩추출물",1);
             globalvariable.pushwarn("야생암추출물",1);
             globalvariable.pushwarn("레드클로버추출물",1);
             globalvariable.pushwarn("체이스트리베리추출물",1);
             globalvariable.pushwarn("바세린",4);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("코코넛오일",1);
+            globalvariable.pushwarn("미네랄오일",1);
         }
-        else if(num==6){
+        else if(num==6){//ORPT
             str += "샐러지추출물, 라임추출물, 당근추출물, AHA, 마그네슘아스코빌포스페이트";
             globalvariable.pushwarn("샐러지추출물",1);
             globalvariable.pushwarn("라임추출물",2);
             globalvariable.pushwarn("당근추출물",1);
             globalvariable.pushwarn("AHA",1);
             globalvariable.pushwarn("마그네슘아스코빌포스페이트",1);
-            globalvariable.pushwarn("정제수",1);
         }
-        else if(num==7){
-            str += "미네랄오일, 해바라기씨오일, 바세린, 코코넛오일, 미리스틸프로페오네이트";
+        else if(num==7){//ORNW
+            str += "미네랄오일, 해바라기씨오일, 바세린, 코코넛오일, 미리스틸 프로페오네이트";
             globalvariable.pushwarn("미네랄오일",1);
             globalvariable.pushwarn("해바라기씨오일",2);
             globalvariable.pushwarn("바세린",4);
             globalvariable.pushwarn("코코넛오일",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("미리스틸프로페오네이트",1);
         }
-        else if(num==8){
+        else if(num==8){//ORNT
             str += "바세린, 미네랄오일, 달맞이꽃오일";
             globalvariable.pushwarn("바세린",4);
             globalvariable.pushwarn("미네랄오일",1);
             globalvariable.pushwarn("달맞이꽃오일",1);
-            globalvariable.pushwarn("정제수",1);
         }
-        else if(num==9){
+        else if(num==9){//DSPW
             str += "필라그리놀, 알로에베라, 캐모마일추출물, 고운오트밀가루, 녹차추출물, 판테놀";
             globalvariable.pushwarn("필라그리놀",1);
             globalvariable.pushwarn("알로에베라",3);
@@ -326,61 +325,64 @@ public class SettingActivity extends AppCompatActivity {
             globalvariable.pushwarn("고운오트밀가루",1);
             globalvariable.pushwarn("녹차추출물",1);
             globalvariable.pushwarn("판테놀",1);
-            globalvariable.pushwarn("정제수",1);
         }
-        else if(num==10){
-            str += "페퍼민트오일, 로즈오일, 디클로로펜, 이미다졸리디닐우레아, 트리클로산";
+        else if(num==10){//DSPT
+            str += "페퍼민트오일, 로즈오일, 디클로로펜, 이미다졸리디닐우레아, 트리클로산, 코코넛 오일";
             globalvariable.pushwarn("페퍼민트오일",1);
             globalvariable.pushwarn("로즈오일",1);
             globalvariable.pushwarn("디클로로펜",1);
             globalvariable.pushwarn("이미다졸리디닐우레아",6);
             globalvariable.pushwarn("트리클로산",7);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("코코넛오일",1);
         }
-        else if(num==11){
-            str += "마그네슘아스코빌포스페이트, 글루코노락톤, 프로필갈레이트, 피마자오일, 코발트, 알코올";
+        else if(num==11){//DSNW
+            str += "마그네슘아스코빌포스페이트, 글루코노락톤, 프로필갈레이트, 피마자오일, 코발트, 알코올, 부틸 스테아레이트, 시나몬 오일, 페퍼민트 오일";
             globalvariable.pushwarn("마그네슘아스코빌포스페이트",1);
             globalvariable.pushwarn("글루코노락톤",1);
             globalvariable.pushwarn("프로필갈레이트",3);
             globalvariable.pushwarn("피마자오일",2);
             globalvariable.pushwarn("알코올",2);
             globalvariable.pushwarn("코발트",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("부틸스테아레이트",1);
+            globalvariable.pushwarn("시나몬오일",1);
+            globalvariable.pushwarn("페퍼민트오일",1);
         }
-        else if(num==12){
-            str += "이소프로필미리스테이트, 디클로로펜, 이미다졸리디닐우레아, 카톤CG, 트리클로산";
+        else if(num==12){//DSNT
+            str += "이소프로필미리스테이트, 디클로로펜, 이미다졸리디닐우레아, 카톤CG, 트리클로산, 소디움라우릴설페이트, 시나몬 오일";
             globalvariable.pushwarn("이소프로필미리스테이트",1);
             globalvariable.pushwarn("디클로로펜",1);
             globalvariable.pushwarn("이미다졸리디닐우레아",6);
             globalvariable.pushwarn("카톤CG",1);
             globalvariable.pushwarn("트리클로산",7);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("소디움라우릴설페이트",2);
+            globalvariable.pushwarn("시나몬오일",1);
         }
-        else if(num==13){
-            str += "알코올, 소디움라우릴설페이트, 소디움라우레스설페이트파라벤";
+        else if(num==13){//DRPW
+            str += "알코올, 소디움라우릴설페이트, 소디움라우레스설페이트파라벤, 코코넛 오일";
             globalvariable.pushwarn("알코올",2);
             globalvariable.pushwarn("소디움라우릴설페이트",2);
             globalvariable.pushwarn("소디움라우레스설페이트파라벤",2);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("코코넛오일",1);
         }
-        else if(num==14){
-            str += "에스트라디올, 콩추출물, 프로필갈레이트, 피마자오일, 코발트";
+        else if(num==14){//DRPT
+            str += "에스트라디올, 콩추출물, 프로필갈레이트, 피마자오일, 코발트, 알코올";
             globalvariable.pushwarn("에스트라디올",1);
             globalvariable.pushwarn("콩추출물",1);
             globalvariable.pushwarn("프로필갈레이트",3);
             globalvariable.pushwarn("피마자오일",2);
             globalvariable.pushwarn("코발트",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("알코올",2);
         }
-        else if(num==15){
-            str += "소디움라우릴설페이트, 소디움라우레스설페이트, 알코올, 글루코노락톤";
+        else if(num==15){//DRNW
+            str += "소디움라우릴설페이트, 소디움라우레스설페이트, 알코올, 글루코노락톤, 락틱애씨드, 아세톤";
             globalvariable.pushwarn("소디움라우릴설페이트",2);
             globalvariable.pushwarn("소디움라우레스설페이트",2);
             globalvariable.pushwarn("알코올",2);
             globalvariable.pushwarn("글루코노락톤",1);
-            globalvariable.pushwarn("정제수",1);
+            globalvariable.pushwarn("락틱애씨드",4);
+            globalvariable.pushwarn("아세톤",3);
         }
-        else if(num==16){
+        else if(num==16){//DRNT
             str += "아세톤, 이소프로필알코올, 변성알코올, 메탄올, 벤질알코올, 에탄올";
             globalvariable.pushwarn("아세톤",3);
             globalvariable.pushwarn("이소프로필알코올",2);
@@ -388,7 +390,6 @@ public class SettingActivity extends AppCompatActivity {
             globalvariable.pushwarn("메탄올",1);
             globalvariable.pushwarn("벤질알코올",5);
             globalvariable.pushwarn("에탄올",2);
-            globalvariable.pushwarn("정제수",1);
         }
         return str;
     }

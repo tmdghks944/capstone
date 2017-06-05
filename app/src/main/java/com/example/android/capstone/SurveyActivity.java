@@ -88,6 +88,7 @@ public class SurveyActivity extends AppCompatActivity{
                     startActivity(intent);
                 }
                 break;
+            //TODO : 선택으로 다음 누르면 못가게 해야함.
             case R.id.q1:
                 globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
                 question1.setVisibility(View.GONE);
