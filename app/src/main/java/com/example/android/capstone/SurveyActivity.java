@@ -90,208 +90,123 @@ public class SurveyActivity extends AppCompatActivity{
                 break;
             //TODO : 선택으로 다음 누르면 못가게 해야함.
             case R.id.q1:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question1.setVisibility(View.GONE);
-                    btn1.setVisibility(View.GONE);
-                    question2.setVisibility(View.VISIBLE);
-                    btn2.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question1.setVisibility(View.GONE);
+                btn1.setVisibility(View.GONE);
+                question2.setVisibility(View.VISIBLE);
+                btn2.setVisibility(View.VISIBLE);
                 break;
             case R.id.q2:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question2.setVisibility(View.GONE);
-                    btn2.setVisibility(View.GONE);
-                    question3.setVisibility(View.VISIBLE);
-                    btn3.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question2.setVisibility(View.GONE);
+                btn2.setVisibility(View.GONE);
+                question3.setVisibility(View.VISIBLE);
+                btn3.setVisibility(View.VISIBLE);
                 break;
             case R.id.q3:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question3.setVisibility(View.GONE);
-                    btn3.setVisibility(View.GONE);
-                    question4.setVisibility(View.VISIBLE);
-                    btn4.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question3.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                question4.setVisibility(View.VISIBLE);
+                btn4.setVisibility(View.VISIBLE);
                 break;
             case R.id.q4:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question4.setVisibility(View.GONE);
-                    btn4.setVisibility(View.GONE);
-                    question5.setVisibility(View.VISIBLE);
-                    btn5.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question4.setVisibility(View.GONE);
+                btn4.setVisibility(View.GONE);
+                question5.setVisibility(View.VISIBLE);
+                btn5.setVisibility(View.VISIBLE);
                 break;
             case R.id.q5:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question5.setVisibility(View.GONE);
-                    btn5.setVisibility(View.GONE);
-                    question6.setVisibility(View.VISIBLE);
-                    btn6.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question5.setVisibility(View.GONE);
+                btn5.setVisibility(View.GONE);
+                question6.setVisibility(View.VISIBLE);
+                btn6.setVisibility(View.VISIBLE);
                 break;
             case R.id.q6:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setod_value(globalvariable.getod_value() + globalvariable.gettemp_value());
-                    question6.setVisibility(View.GONE);
-                    btn6.setVisibility(View.GONE);
-                    question7.setVisibility(View.VISIBLE);
-                    btn7.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setod_value(globalvariable.getod_value()+globalvariable.gettemp_value());
+                question6.setVisibility(View.GONE);
+                btn6.setVisibility(View.GONE);
+                question7.setVisibility(View.VISIBLE);
+                btn7.setVisibility(View.VISIBLE);
                 break;
             case R.id.q7:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question7.setVisibility(View.GONE);
-                    btn7.setVisibility(View.GONE);
-                    question8.setVisibility(View.VISIBLE);
-                    btn8.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question7.setVisibility(View.GONE);
+                btn7.setVisibility(View.GONE);
+                question8.setVisibility(View.VISIBLE);
+                btn8.setVisibility(View.VISIBLE);
                 break;
             case R.id.q8:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question8.setVisibility(View.GONE);
-                    btn8.setVisibility(View.GONE);
-                    question9.setVisibility(View.VISIBLE);
-                    btn9.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question8.setVisibility(View.GONE);
+                btn8.setVisibility(View.GONE);
+                question9.setVisibility(View.VISIBLE);
+                btn9.setVisibility(View.VISIBLE);
                 break;
             case R.id.q9:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question9.setVisibility(View.GONE);
-                    btn9.setVisibility(View.GONE);
-                    question10.setVisibility(View.VISIBLE);
-                    btn10.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question9.setVisibility(View.GONE);
+                btn9.setVisibility(View.GONE);
+                question10.setVisibility(View.VISIBLE);
+                btn10.setVisibility(View.VISIBLE);
                 break;
             case R.id.q10:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question10.setVisibility(View.GONE);
-                    btn10.setVisibility(View.GONE);
-                    question11.setVisibility(View.VISIBLE);
-                    btn11.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question10.setVisibility(View.GONE);
+                btn10.setVisibility(View.GONE);
+                question11.setVisibility(View.VISIBLE);
+                btn11.setVisibility(View.VISIBLE);
                 break;
             case R.id.q11:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question11.setVisibility(View.GONE);
-                    btn11.setVisibility(View.GONE);
-                    question12.setVisibility(View.VISIBLE);
-                    btn12.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question11.setVisibility(View.GONE);
+                btn11.setVisibility(View.GONE);
+                question12.setVisibility(View.VISIBLE);
+                btn12.setVisibility(View.VISIBLE);
                 break;
             case R.id.q12://원래 메인가는 버튼.
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question12.setVisibility(View.GONE);
-                    btn12.setVisibility(View.GONE);
-                    question13.setVisibility(View.VISIBLE);
-                    btn13.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question12.setVisibility(View.GONE);
+                btn12.setVisibility(View.GONE);
+                question13.setVisibility(View.VISIBLE);
+                btn13.setVisibility(View.VISIBLE);
                 break;
             case R.id.q13://
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setpn_value(globalvariable.getpn_value() + globalvariable.gettemp_value());
-                    question13.setVisibility(View.GONE);
-                    btn13.setVisibility(View.GONE);
-                    question14.setVisibility(View.VISIBLE);
-                    btn14.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setpn_value(globalvariable.getpn_value()+globalvariable.gettemp_value());
+                question13.setVisibility(View.GONE);
+                btn13.setVisibility(View.GONE);
+                question14.setVisibility(View.VISIBLE);
+                btn14.setVisibility(View.VISIBLE);
                 break;
             case R.id.q14:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value() + globalvariable.gettemp_value());
-                    question14.setVisibility(View.GONE);
-                    btn14.setVisibility(View.GONE);
-                    question15.setVisibility(View.VISIBLE);
-                    btn15.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question14.setVisibility(View.GONE);
+                btn14.setVisibility(View.GONE);
+                question15.setVisibility(View.VISIBLE);
+                btn15.setVisibility(View.VISIBLE);
                 break;
             case R.id.q15:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value() + globalvariable.gettemp_value());
-                    question15.setVisibility(View.GONE);
-                    btn15.setVisibility(View.GONE);
-                    question16.setVisibility(View.VISIBLE);
-                    btn16.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question15.setVisibility(View.GONE);
+                btn15.setVisibility(View.GONE);
+                question16.setVisibility(View.VISIBLE);
+                btn16.setVisibility(View.VISIBLE);
                 break;
             case R.id.q16:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value() + globalvariable.gettemp_value());
-                    question16.setVisibility(View.GONE);
-                    btn16.setVisibility(View.GONE);
-                    question17.setVisibility(View.VISIBLE);
-                    btn17.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question16.setVisibility(View.GONE);
+                btn16.setVisibility(View.GONE);
+                question17.setVisibility(View.VISIBLE);
+                btn17.setVisibility(View.VISIBLE);
                 break;
             case R.id.q17:
-                if(globalvariable.gettemp_value()==0){
-                    Toast.makeText(SurveyActivity.this,"설문에 응답해 주세요",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value() + globalvariable.gettemp_value());
-                    question17.setVisibility(View.GONE);
-                    btn17.setVisibility(View.GONE);
-                    question18.setVisibility(View.VISIBLE);
-                    gotomainbtn.setVisibility(View.VISIBLE);
-                }
+                globalvariable.setsurvey_sr_value(globalvariable.getsurvey_sr_value()+globalvariable.gettemp_value());
+                question17.setVisibility(View.GONE);
+                btn17.setVisibility(View.GONE);
+                question18.setVisibility(View.VISIBLE);
+                gotomainbtn.setVisibility(View.VISIBLE);
                 break;
         }
     }

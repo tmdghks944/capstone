@@ -143,7 +143,9 @@ public class CameraActivity extends AppCompatActivity {
         String filenameArray[] = filename.split("\\.");
         String extension = filenameArray[filenameArray.length-1];
         File file2 = new File(Environment.getExternalStorageDirectory().toString() +"/" + "targetfile.jpg");
-        copy(file,file2);
+        if(file.getAbsolutePath()!=file2.getAbsolutePath()) {
+            copy(file, file2);
+        }
         TransferObserver observer = transferUtility.upload(Constants.BUCKET_NAME, file2.getName(), file2);
     }
 

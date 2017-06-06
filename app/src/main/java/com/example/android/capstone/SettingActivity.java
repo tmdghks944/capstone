@@ -97,19 +97,25 @@ public class SettingActivity extends AppCompatActivity {
 
             line = br.readLine();                       //피부 톤에 대한 정보
             text.append(line);
-            globalvariable.settone_value(Integer.parseInt(text.toString()));
-            text.setLength(0);
+            if(text.toString().equals("cannot")){//cannot 뱉어낼때.
+                globalvariable.settone_value(-1);
+                globalvariable.setsr_value(-1);
+                globalvariable.setwt_value(-1);
+            }
+            else{
+                globalvariable.settone_value(Integer.parseInt(text.toString()));
+                text.setLength(0);
 
-            line = br.readLine();                       //sr에 대한 정보 0or1 정도
-            text.append(line);
-            globalvariable.setsr_value(Integer.parseInt(text.toString()));
-            text.setLength(0);
+                line = br.readLine();                       //sr에 대한 정보 0or1 정도
+                text.append(line);
+                globalvariable.setsr_value(Integer.parseInt(text.toString()));
+                text.setLength(0);
 
-            line = br.readLine();                       //wt에 대한 정보 0 or 1 or -1  -1이라면 다시 사진을 촬영해야함.
-            text.append(line);
-            globalvariable.setwt_value(Integer.parseInt(text.toString()));
-            text.setLength(0);
-
+                line = br.readLine();                       //wt에 대한 정보 0 or 1 or -1  -1이라면 다시 사진을 촬영해야함.
+                text.append(line);
+                globalvariable.setwt_value(Integer.parseInt(text.toString()));
+                text.setLength(0);
+            }
             br.close() ;
         }catch (IOException e) {
             e.printStackTrace();
